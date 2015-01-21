@@ -1,0 +1,14 @@
+{
+  "name": "resume-creator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "time-grunt": "~1.0.0",
+    "load-grunt-tasks": "~2.0.0",
+    "grunt-ejs": "~0.2.0"
+  }
+}

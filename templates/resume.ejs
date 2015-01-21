@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<style>
+    li{
+        display: inline;
+    }
+</style>
+
+<body>
+
+<header>
+    <h1><%= name %></h1>
+    <address><%= address %></address>
+</header>
+
+<section class="cloud">
+    <h2>Cloud of Interests</h2>
+    <ul>
+        <% for(var i = 0; i < cloudOfInterests.items.length; i++ ) {
+            var item = cloudOfInterests.items[i]; %>
+            <li><%=item.name %></li>
+        <% } %>
+    </ul>
+</section>
+
+<section class="work">
+    <h2>Work Experiences</h2>
+
+    <% for(var i = 0; i < works.length; i++ ){
+        var work = works[i]; %>
+        <h3><%= work.begin %> <%=(work.end?"to "+work.end:"(present)")%></h3>
+        <h3><%= work.company.name %></h3>
+        <h3><%= work.company.location %></h3>
+
+        <% for(var i2 = 0; i2 < work.occupations.length; i2++) {
+            var occupation = work.occupations[i2]; %>
+            <h3><%= (occupation.begin?(occupation.begin + " " + (occupation.end?"to "+occupation.end:"(present)")):"")%></h3>
+            <h4><%= occupation.title %></h4>
+            <ul>
+                <% for(var i3 = 0; i3 < occupation.tasks.length; i3++ ) {
+                    var task = occupation.tasks[i3]; %>
+                <li><%=task %></li>
+                <% } %>
+            </ul>
+        <% } %>
+    <% } %>
+</section>
+
+<section class="education">
+    <h2>Education</h2>
+
+    <% for(var i = 0; i < education.length; i++ ){
+        var school = education[i]; %>
+        <h3><%= school.begin %> <%=(school.end?"to "+school.end:"(present)")%></h3>
+        <h3><%= school.title %></h3>
+        <h3><%= school.school %></h3>
+    <% } %>
+</section>
+
+
+
+</body>
+</html>

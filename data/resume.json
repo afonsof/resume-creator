@@ -1,0 +1,119 @@
+{
+  "name": "Afonso França de Oliveira",
+  "address": "Travessa Santa Luzia, 65",
+  "city": "Barra Mansa",
+  "province": "Rio de Janeiro",
+  "zip": "27323-260",
+  "phone": "+55 24 99947-5822",
+  "email": "afonso.franca@gmail.com",
+
+  "skills": {
+    "Summary": [
+      "Creative, organized, proactive worker, and quick learner.",
+      "People oriented and very well motivated to solve and help customers’ problems or decisions.",
+      "Friendly and responsible with my activities."
+    ],
+    "Marketing and Promotion Skills":[
+      "Customer service oriented helping customers identifying their needs and demonstrating how important they are to the company.",
+      "Knowledge about how to deal with customers and paying attention to all aspects of their needs.",
+      "Follow-up customers, co-workers, or vendors in their needs."
+    ],
+    "Computer Skills": [
+      "Strong abilities in Microsoft Office suite, especially with spreadsheets (MS Excel) and reports.",
+      "Quick learner in any computer related software.",
+      "Strong experience with internal controls."
+    ]
+  },
+  
+  "cloudOfInterests":{
+    "visible": true,
+    "items": [
+      { "name": "Scrum", "level": 1 },
+      { "name": "TDD", "level": 1 },
+      { "name": "JavaScript", "level": 1 },
+      { "name": "Python", "level": 1 },
+      { "name": "Agile", "level": 1 },
+      { "name": "Logo Design", "level": 1 },
+      { "name": "ASP.NET MVC", "level": 1 },
+      { "name": "jQuery", "level": 1 },
+      { "name": "C#", "level": 1 },
+      { "name": "BDD", "level": 1 },
+      { "name": "HTML5", "level": 1 },
+      { "name": "NodeJS", "level": 1 },
+      { "name": "Typescript", "level": 1 },
+      { "name": "CSS3", "level": 1 },
+      { "name": "Closure", "level": 1 },
+      { "name": "Kanban", "level": 1 },
+      { "name": "Machine Learning", "level": 1 },
+      { "name": "XP", "level": 1 },
+      { "name": "Java", "level": 1 },
+      { "name": "AngularJS", "level": 1 },
+      { "name": "Grunt", "level": 1 }]
+  },
+
+  "works": [
+    {
+      "begin": "2006",
+      "company": {
+        "name": "Diebold Inc.",
+        "location": "Rio de Janeiro - Brazil"
+      },
+      "occupations": [
+        {
+          "begin": "2013",
+          "title": "Software Engineer",
+          "tasks": ["Agentless Machine Identification", "Machine Learning", "Server side processor", "Javascript", "C#"]
+        },
+        {
+          "begin": "2013",
+          "end": "2014",
+          "title": "Software Development Manager",
+          "tasks": ["9 developers", "Fraud prevention console", "C#", "ASP.NET MVC", "Javascript", "Scrum", "Kanban",
+                    "eXtreme Programming"]
+        },
+        {
+          "begin": "2011",
+          "end": "2012",
+          "title": "Team Leader",
+          "tasks": ["6 developers", "Code review", "SVN", "Code coverage", "Performance analysis", "Build automation",
+                    "C#", "ASP.NET MVC"]
+        },
+        {
+          "begin": "2006",
+          "end": "2010",
+          "title": "Programmer Analyst",
+          "tasks": ["Internal Intranet", "Malware finder", "Heuristic site classifier", "Antivirus UI", "Python",
+                    "System tests", "Continuous integration", "Nightly build", "ASP.NET MVC", "C++", "jQuery", "HTML5",
+                    "CSS3", "Design Patterns", "TDD" ]
+        }
+      ]
+    },
+    {
+      "begin": "2002",
+      "end": "2006",
+      "company": {
+        "name": "Flextronics International",
+        "location": "Rio de Janeiro - Brazil"
+      },
+      "occupations": [{
+          "title": "Programmer",
+          "tasks": ["C#", "PHP", "Chart of accounts system", "Process exchanging system"]
+      }]
+    }
+  ],
+
+  "education": [
+    {
+      "begin": 2008,
+      "end": 2011,
+      "title": "Master of Business Administration (MBA) in Project Management (PMBOK based)",
+      "school": "FGV – Fundação Getúlio Vargas (Getúlio Vargas Foundation)"
+    },
+    {
+      "begin": 2002,
+      "end": 2006,
+      "title": "Bachelor of Science Degree, Computer Science",
+      "school": "UBM – Centro Universitário de Barra Mansa (University Center of Barra Mansa)"
+    }
+  ]
+}
