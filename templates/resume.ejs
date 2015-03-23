@@ -8,157 +8,131 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
 
-    <link rel="stylesheet" type="text/css"
-          href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="resume.css" media="all"/>
 
 </head>
 <body>
 
-<div id="doc2" class="yui-t7">
-    <div id="inner">
+<div class="paper">
+    <header>
+        <hgroup>
+            <h1><%= name %></h1>
 
-        <header>
-            <div class="yui-gc">
-                <div class="yui-u first">
-                    <h1><%= name %></h1>
+            <h2><%= title %></h2>
+        </hgroup>
+        <address>
+            <%= phone %><br>
+            <%= email %><br>
+            <%= site %><br>
+            <%= linkedin %><br>
+        </address>
+    </header>
 
-                    <h2><%= title %></h2>
-                </div>
+    <main>
+        <% if(profile.visible) { %>
+        <section>
+            <h2><%= profile.title %></h2>
 
-                <div class="yui-u">
-                    <div class="contact-info">
-                        <h3><%= phone %></h3>
-
-                        <h3><%= email %></h3>
-
-                        <h3><%= site %></h3>
-
-                        <h3><%= linkedin %></h3>
-                    </div>
-                </div>
+            <div class="profile">
+                <p class="enlarge"><%= profile.content %></p>
             </div>
-        </header>
+        </section>
+        <% } %>
 
-        <div id="bd">
-            <div id="yui-main">
-                <div class="yui-b">
-                    <% if(profile.visible) { %>
-                    <section class="yui-gf">
-                        <div class="yui-u first">
-                            <h2><%= profile.title %></h2>
-                        </div>
-                        <div class="yui-u">
-                            <p class="enlarge"><%= profile.content %></p>
-                        </div>
-                    </section>
+        <% if(skills.visible) { %>
+        <section>
+            <h2><%= skills.title %></h2>
+
+            <div>
+                <% for(var i = 0; i < skills.items.length; i++) { %>
+                <div class="skill">
+                    <h2><%= skills.items[i].title %></h2>
+
+                    <p><%= skills.items[i].content %></p>
+                </div>
+                <% } %>
+            </div>
+        </section>
+        <% } %>
+
+        <% if(technical.visible) { %>
+        <section>
+            <h2><%= technical.title %></h2>
+
+            <div>
+                <% var lineCount = Math.ceil(technical.items.length / 3) %>
+                <% for(var i = 0; i < 3; i++ ){ %>
+
+                <ul class="technical">
+                    <% for(var j = 0; j < lineCount; j++ ){ %>
+                    <li><%= technical.items[i * lineCount + j] ? technical.items[i * lineCount + j] : "" %></li>
                     <% } %>
+                </ul>
+                <% } %>
+            </div>
+        </section>
+        <% } %>
 
-                    <% if(skills.visible) { %>
-                    <section class="yui-gf">
-                        <div class="yui-u first">
-                            <h2><%= skills.title %></h2>
-                        </div>
-                        <div class="yui-u">
-                            <% for(var i = 0; i < skills.items.length; i++) { %>
-                            <div class="skill">
-                                <h2><%= skills.items[i].title %></h2>
+        <% if(experiences.visible) { %>
+        <section>
 
-                                <p><%= skills.items[i].content %></p>
-                            </div>
+            <h2><%= experiences.title %></h2>
+
+            <div>
+                <% for(var i = 0; i < experiences.items.length; i++) {
+                    var experience = experiences.items[i]; %>
+                <div class="experience">
+                    <h2><%= experience.name %></h2>
+                    <h4><%= experience.period %></h4>
+                    <% for(var i1 = 0; i1 < experience.occupations.length; i1++) {
+                        var occupation = experience.occupations[i1]; %>
+                    <div class="occupation">
+                        <h3><%= occupation.title %></h3>
+
+                        <p>
+                            <% for(var j = 0; j < occupation.tasks.length; j++){ %>
+                            <%= j !== 0 ? "•" : "" %>
+                            <%= occupation.tasks[j] %>
                             <% } %>
-                        </div>
-                    </section>
-                    <% } %>
-
-                    <% if(technical.visible) { %>
-                    <section class="yui-gf">
-                        <div class="yui-u first">
-                            <h2><%= technical.title %></h2>
-                        </div>
-                        <div class="yui-u">
-                            <% var lineCount = Math.ceil(technical.items.length / 3) %>
-                            <% for(var i = 0; i < 3; i++ ){ %>
-
-                            <ul class="skill">
-                                <% for(var j = 0; j < lineCount; j++ ){ %>
-                                <li><%= technical.items[i * lineCount + j] ? technical.items[i * lineCount + j] : "" %></li>
-                                <% } %>
-                            </ul>
-                            <% } %>
-                        </div>
-                    </section>
-                    <% } %>
-
-                    <% if(experiences.visible) { %>
-                    <section class="yui-gf">
-
-                        <div class="yui-u first">
-                            <h2><%= experiences.title %></h2>
-                        </div>
-
-                        <div class="yui-u experiences">
-                            <% for(var i = 0; i < experiences.items.length; i++) {
-                                var experience = experiences.items[i]; %>
-                            <div class="experience <%= (i == experiences.items.length - 1) ? "last" : "" %>">
-                                <h2><%= experience.name %></h2>
-                                <h4><%= experience.period %></h4>
-                                <% for(var i1 = 0; i1 < experience.occupations.length; i1++) {
-                                    var occupation = experience.occupations[i1]; %>
-                                <div class="occupation">
-                                    <h3><%= occupation.title %></h3>
-                                    <p>
-                                        <% for(var j = 0; j < occupation.tasks.length; j++){ %>
-                                        <%= j!==0?"•":"" %>
-                                        <%= occupation.tasks[j] %>
-                                        <% } %>
-                                        <div class="clear"></div>
-                                    </p>
-                                </div>
-                                <% } %>
-                            </div>
-                            <% } %>
-                        </div>
-                    </section>
-                    <% } %>
-
-                    <% if(educations.visible) { %>
-                    <section class="yui-gf educations">
-                        <div class="yui-u first">
-                            <h2><%= educations.title %></h2>
-                        </div>
-                        <% for(var i = 0; i < educations.items.length; i++ ) {
-                            var education = educations.items[i]; %>
-                        <div class="yui-u education">
-                            <h2><%= education.title %></h2>
-
-                            <h3><%= education.school %></h3>
-                        </div>
-                        <% } %>
-                    </section>
-                    <% } %>
-
-                    <% if(volunteers.visible) { %>
-                    <div class="yui-gf">
-                        <div class="yui-u first">
-                            <h2><%= volunteers.title %></h2>
-                        </div>
-                        <% for(var i = 0; i < volunteers.items.length; i++ ) {
-                            var volunteer = volunteers.items[i]; %>
-                        <div class="yui-u">
-                            <h2><%= volunteer.title %></h2>
-
-                            <h3><%= volunteer.organization %></h3>
-
-                            <p><%= volunteer.content %></p>
-                        </div>
-                        <% } %>
+                        </p>
                     </div>
                     <% } %>
                 </div>
+                <% } %>
             </div>
-        </div>
-    </div>
+        </section>
+        <% } %>
+
+        <% if(educations.visible) { %>
+        <section class="educations">
+            <h2><%= educations.title %></h2>
+            <% for(var i = 0; i < educations.items.length; i++ ) {
+                var education = educations.items[i]; %>
+            <div class="education">
+                <h2><%= education.title %></h2>
+
+                <h3><%= education.school %></h3>
+            </div>
+            <% } %>
+        </section>
+        <% } %>
+
+        <% if(volunteers.visible) { %>
+        <section>
+            <h2><%= volunteers.title %></h2>
+            <% for(var i = 0; i < volunteers.items.length; i++ ) {
+                var volunteer = volunteers.items[i]; %>
+            <div>
+                <h2><%= volunteer.title %></h2>
+
+                <h3><%= volunteer.organization %></h3>
+
+                <p><%= volunteer.content %></p>
+            </div>
+            <% } %>
+        </section>
+        <% } %>
+    </main>
 </div>
 </body>
 </html>

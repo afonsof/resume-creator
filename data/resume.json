@@ -4,10 +4,10 @@
   "location": "São Paulo / Brazil",
   "phone": "+55 24 99947-5822",
   "email": "afonso.franca@gmail.com",
-  "site": "afonsof.com",
+  "site": "afonsof.com • github.com/afonsof",
   "linkedin": "linkedin.com/in/afonsof",
   "profile": {
-    "visible": false,
+    "visible": true,
     "title": "Profile",
     "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
   },
