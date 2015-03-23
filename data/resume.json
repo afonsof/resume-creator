@@ -1,126 +1,156 @@
 {
   "name": "Afonso França de Oliveira",
-  "title":"Software Engineer",
+  "title": "Software Engineer",
   "location": "São Paulo / Brazil",
   "phone": "+55 24 99947-5822",
   "email": "afonso.franca@gmail.com",
   "site": "afonsof.com",
   "linkedin": "linkedin.com/in/afonsof",
-
   "profile": {
     "visible": false,
-    "content": "Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives￼before cross-media catalysts for change."
+    "title": "Profile",
+    "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
   },
-
   "skills": {
+    "title": "Main Skills",
     "visible": true,
-    "items": [{
-      "title": "Programmer",
-      "content": "Programador Web por 10 anos…"
+    "items": [
+      {
+        "title": "Web Programmer",
+        "content": "For 10 years creating software, I started using PHP, passing through .NET and nowadays I enjoy NodeJS."
       },
       {
-      "title": "Agile Enthusiast",
-      "content": "..."
+        "title": "Agile Enthusiast",
+        "content": "I've already worn the hat of Scrum Master and Product Owner, In these days we are also using some Kanban principles."
       },
       {
-      "title": "Web Specialist",
-      "content": "..."
+        "title": "Software Engineer",
+        "content": "I know how is important to use TDD, Refactoring and Code Review to create profitable software."
       }
     ]
   },
-  
-  "technical":{
+  "technical": {
+    "title": "Technical",
     "visible": true,
     "items": [
-      { "name": "Scrum", "level": 1 },
-      { "name": "TDD", "level": 1 },
-      { "name": "JavaScript", "level": 1 },
-      { "name": "Python", "level": 1 },
-      { "name": "Agile", "level": 1 },
-      { "name": "Logo Design", "level": 1 },
-      { "name": "ASP.NET MVC", "level": 1 },
-      { "name": "jQuery", "level": 1 },
-      { "name": "C#", "level": 1 },
-      { "name": "BDD", "level": 1 },
-      { "name": "HTML5", "level": 1 },
-      { "name": "NodeJS", "level": 1 },
-      { "name": "Typescript", "level": 1 },
-      { "name": "CSS3", "level": 1 },
-      { "name": "Closure", "level": 1 },
-      { "name": "Kanban", "level": 1 },
-      { "name": "Machine Learning", "level": 1 },
-      { "name": "XP", "level": 1 },
-      { "name": "Java", "level": 1 },
-      { "name": "AngularJS", "level": 1 },
-      { "name": "Grunt", "level": 1 }]
+      "Agile",
+      "XP",
+      "Kanban",
+      "Scrum",
+      "JavaScript",
+      "Python",
+      "ASP.NET MVC",
+      "jQuery",
+      "C#",
+      "HTML5",
+      "NodeJS",
+      "CSS3",
+      "Machine Learning",
+      "TDD"
+    ]
   },
-
   "experiences": {
     "visible": true,
+    "title": "Work Experiences",
     "items": [
-    {
-      "begin": "2006",
-      "company": {
+      {
+        "period": "2006-current",
         "name": "Diebold Inc.",
-        "location": "Rio de Janeiro - Brazil"
+        "location": "São Paulo - Brazil",
+        "occupations": [
+          {
+            "title": "Software Engineer",
+            "tasks": [
+              "Developed Internal Intranet using ASP.NET MVC, jQuery, HTML5 and CSS",
+              "Developed a Social Network Malware finder",
+              "Developed a Heuristic site classifier",
+              "Developed an Antivirus UI in C++ MFC",
+              "Created build scripts in Python",
+              "Developed System tests",
+              "Implemented Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
+              "Developed using Design Patterns and TDD",
+              "Developed an Javascript unique Machine Identification"
+            ]
+          },
+          {
+            "title": "Team Leader/Scrum Master",
+            "tasks": [
+              "Coordinated 6 developers",
+              "Code review",
+              "SVN",
+              "Code coverage",
+              "Performance analysis",
+              "Build automation",
+              "C#",
+              "ASP.NET MVC"
+            ]
+          },
+          {
+            "title": "Dev Manager/Product Owner",
+            "tasks": [
+              "9 developers",
+              "Fraud prevention console",
+              "C#",
+              "ASP.NET MVC",
+              "Javascript",
+              "Scrum",
+              "Kanban",
+              "eXtreme Programming"
+            ]
+          }
+        ]
       },
-      "occupations": [
-        {
-          "begin": "2013",
-          "title": "Software Engineer",
-          "tasks": ["Agentless Machine Identification", "Machine Learning", "Server side processor", "Javascript", "C#"]
-        },
-        {
-          "begin": "2013",
-          "end": "2014",
-          "title": "Software Development Manager",
-          "tasks": ["9 developers", "Fraud prevention console", "C#", "ASP.NET MVC", "Javascript", "Scrum", "Kanban",
-                    "eXtreme Programming"]
-        },
-        {
-          "begin": "2011",
-          "end": "2012",
-          "title": "Team Leader",
-          "tasks": ["6 developers", "Code review", "SVN", "Code coverage", "Performance analysis", "Build automation",
-                    "C#", "ASP.NET MVC"]
-        },
-        {
-          "begin": "2006",
-          "end": "2010",
-          "title": "Programmer Analyst",
-          "tasks": ["Internal Intranet", "Malware finder", "Heuristic site classifier", "Antivirus UI", "Python",
-                    "System tests", "Continuous integration", "Nightly build", "ASP.NET MVC", "C++", "jQuery", "HTML5",
-                    "CSS3", "Design Patterns", "TDD" ]
-        }
-      ]
-    },
-    {
-      "begin": "2005",
-      "end": "2006",
-      "company": {
+      {
+        "period": "2005-2006",
         "name": "Flextronics International",
-        "location": "Rio de Janeiro - Brazil"
+        "location": "Rio de Janeiro - Brazil",
+        "occupations": [
+          {
+            "title": "IT Trainee",
+            "tasks": [
+              "Delivered internal softwares made using PHP"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "educations": {
+    "visible": true,
+    "title": "Education",
+    "items": [
+      {
+        "period": "2008-2011",
+        "title": "MBA in Project Management (PMBOK based)",
+        "school": "FGV – Fundação Getúlio Vargas (Getúlio Vargas Foundation)"
       },
-      "occupations": [{
-          "begin": "2005",
-          "title": "Trainee",
-          "tasks": ["C#", "PHP", "Chart of accounts system", "Process exchanging system"]
-      }]
-    }
-  ]},
-
-  "education": [
-    {
-      "begin": 2008,
-      "end": 2011,
-      "title": "Master of Business Administration (MBA) in Project Management (PMBOK based)",
-      "school": "FGV – Fundação Getúlio Vargas (Getúlio Vargas Foundation)"
-    },
-    {
-      "begin": 2002,
-      "end": 2006,
-      "title": "Bachelor of Science Degree, Computer Science",
-      "school": "UBM – Centro Universitário de Barra Mansa (University Center of Barra Mansa)"
-    }
-  ]
+      {
+        "period": "2002-2006",
+        "end": 2006,
+        "title": "Bachelor of Science Degree, Computer Science",
+        "school": "UBM – Centro Universitário de Barra Mansa (University Center of Barra Mansa)"
+      }
+    ]
+  },
+  "volunteers": {
+    "title": "Volunteer Experience",
+    "visible": true,
+    "items": [
+      {
+        "title": "Collaborator in Open Source Community",
+        "organization": "github.com/afonsof",
+        "content": "Projects: /BayesSharp, /EvolveSharp /grunt-qunit-cov and /pyhammer"
+      },
+      {
+        "title": "Co-creator and Presenter",
+        "organization": "Event Web Dev Summit 2015",
+        "content": "Organized together Google Developer Group in Rio an event for 200 people"
+      },
+      {
+        "title": "Community Leader",
+        "organization": "Jubasulf",
+        "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths"
+      }
+    ]
+  }
 }
