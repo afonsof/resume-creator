@@ -9,7 +9,17 @@ module.exports = function(grunt) {
         options: require('./data/resume.json'),
         dest: 'dist/resume.html'
       }
-    }
+    },
+    copy: {
+      main:{
+        files: [
+          {expand: true, cwd: 'templates/', src: ['**'], dest: 'dist/'},
+        ]
+      }
+    },
+    clean: {
+      main: ["dist/*.ejs"],
+    },
   });
 
   // Load grunt tasks automatically
@@ -19,6 +29,6 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   // Default task(s).
-  grunt.registerTask('default', ['ejs']);
+  grunt.registerTask('default', ['ejs', 'copy', 'clean']);
 
 };

@@ -1,31 +1,35 @@
 {
   "name": "Afonso França de Oliveira",
-  "address": "Travessa Santa Luzia, 65",
-  "city": "Barra Mansa",
-  "province": "Rio de Janeiro",
-  "zip": "27323-260",
+  "title":"Software Engineer",
+  "location": "São Paulo / Brazil",
   "phone": "+55 24 99947-5822",
   "email": "afonso.franca@gmail.com",
+  "site": "afonsof.com",
+  "linkedin": "linkedin.com/in/afonsof",
+
+  "profile": {
+    "visible": false,
+    "content": "Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives￼before cross-media catalysts for change."
+  },
 
   "skills": {
-    "Summary": [
-      "Creative, organized, proactive worker, and quick learner.",
-      "People oriented and very well motivated to solve and help customers’ problems or decisions.",
-      "Friendly and responsible with my activities."
-    ],
-    "Marketing and Promotion Skills":[
-      "Customer service oriented helping customers identifying their needs and demonstrating how important they are to the company.",
-      "Knowledge about how to deal with customers and paying attention to all aspects of their needs.",
-      "Follow-up customers, co-workers, or vendors in their needs."
-    ],
-    "Computer Skills": [
-      "Strong abilities in Microsoft Office suite, especially with spreadsheets (MS Excel) and reports.",
-      "Quick learner in any computer related software.",
-      "Strong experience with internal controls."
+    "visible": true,
+    "items": [{
+      "title": "Programmer",
+      "content": "Programador Web por 10 anos…"
+      },
+      {
+      "title": "Agile Enthusiast",
+      "content": "..."
+      },
+      {
+      "title": "Web Specialist",
+      "content": "..."
+      }
     ]
   },
   
-  "cloudOfInterests":{
+  "technical":{
     "visible": true,
     "items": [
       { "name": "Scrum", "level": 1 },
@@ -51,7 +55,9 @@
       { "name": "Grunt", "level": 1 }]
   },
 
-  "works": [
+  "experiences": {
+    "visible": true,
+    "items": [
     {
       "begin": "2006",
       "company": {
@@ -89,18 +95,19 @@
       ]
     },
     {
-      "begin": "2002",
+      "begin": "2005",
       "end": "2006",
       "company": {
         "name": "Flextronics International",
         "location": "Rio de Janeiro - Brazil"
       },
       "occupations": [{
-          "title": "Programmer",
+          "begin": "2005",
+          "title": "Trainee",
           "tasks": ["C#", "PHP", "Chart of accounts system", "Process exchanging system"]
       }]
     }
-  ],
+  ]},
 
   "education": [
     {
