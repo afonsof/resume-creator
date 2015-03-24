@@ -1,3 +1,7 @@
+$border-color: #eee;
+$paper-color: #fff;
+$font-color: #333;
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
   margin: 0;
   padding: 0;
@@ -6,7 +10,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 body {
   font: 13px/1.231 arial, helvetica, clean, sans-serif;
   font-family: "Georgia", serif;
-  color: #444;
+  color: $font-color;
   width: 73.076em;
   margin: auto;
   text-align: left;
@@ -30,17 +34,13 @@ h3, h4 {
 }
 
 h1, h2, h3, h4 {
-  color: #333;
+  color:$font-color;
 }
 
 p {
   font-size: 100%;
   line-height: 18px;
   padding-right: 3em;
-}
-
-a {
-  color: #990003
 }
 
 a:hover {
@@ -53,7 +53,7 @@ strong {
 
 li {
   line-height: 24px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $border-color;
 }
 
 body {
@@ -62,7 +62,7 @@ body {
 .paper {
   padding: 10px 80px;
   margin: 0 auto;
-  background: #ddd;
+  background: $paper-color;
   section:after, header:after {
     content: ".";
     display: block;
@@ -73,9 +73,9 @@ body {
 }
 
 header {
-  margin: 2.5em 0 3em 0;
-  padding-bottom: 1.5em;
-  border-bottom: 1px solid #ccc;
+  margin: 2.5em 0 0 0;
+  //padding-bottom: 1.5em;
+  //border-bottom: 1px solid $border-color;
 
   hgroup {
     float: left;
@@ -97,16 +97,16 @@ header {
     width: 32%;
     margin-left: 1.99%;
     float: right;
-    color: #333;
     font-size: 122%;
     text-align: right;
   }
 }
 
 section {
-  margin-bottom: 2em;
-  padding-bottom: 2em;
-  border-bottom: 1px solid #ccc;
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid #eee;
+  page-break-inside: avoid;
 
   & > h2 {
     width: 12.3%;
@@ -123,7 +123,7 @@ section {
     position: relative;
     margin-bottom: 1em;
     padding-bottom: 1em;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $border-color;
 
     h4 {
       position: absolute;
@@ -143,7 +143,7 @@ section {
     .occupation {
       position: relative;
       &:last-child p {
-        margin-bottom: 1em;
+        margin-bottom: 0;
       }
     }
   }
@@ -163,11 +163,17 @@ section {
   }
 
   .education {
+    position: relative;
     h3 {
       margin-bottom: 10px;
     }
     &:last-child h3 {
       margin-bottom: 0;
+    }
+    h4 {
+      position: absolute;
+      top: 0;
+      right: 0
     }
   }
 
@@ -177,5 +183,19 @@ section {
       padding-right: 6.5em;
       line-height: 24px;
     }
+  }
+
+  .volunteer{
+    p{
+      margin-bottom: 10px;
+    }
+    &:last-child p {
+      margin-bottom: 0;
+    }
+  }
+
+  .certifications{
+    width: 50%;
+    float: left;
   }
 }

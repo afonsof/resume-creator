@@ -7,7 +7,7 @@
   "site": "afonsof.com • github.com/afonsof",
   "linkedin": "linkedin.com/in/afonsof",
   "profile": {
-    "visible": true,
+    "visible": false,
     "title": "Profile",
     "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
   },
@@ -33,20 +33,23 @@
     "title": "Technical",
     "visible": true,
     "items": [
+      "Javascript",
+      "C#/ASP.NET MVC",
+      "HTML5",
+      "NodeJS",
+      "CSS3",
+
       "Agile",
       "XP",
       "Kanban",
       "Scrum",
-      "JavaScript",
       "Python",
-      "ASP.NET MVC",
-      "jQuery",
-      "C#",
-      "HTML5",
-      "NodeJS",
-      "CSS3",
-      "Machine Learning",
-      "TDD"
+
+      "Code Coverage",
+      "Design Patterns",
+      "TDD",
+      "CVS",
+      "Continuous Integration"
     ]
   },
   "experiences": {
@@ -61,41 +64,29 @@
           {
             "title": "Software Engineer",
             "tasks": [
-              "Developed Internal Intranet using ASP.NET MVC, jQuery, HTML5 and CSS",
-              "Developed a Social Network Malware finder",
-              "Developed a Heuristic site classifier",
-              "Developed an Antivirus UI in C++ MFC",
-              "Created build scripts in Python",
-              "Developed System tests",
-              "Implemented Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
-              "Developed using Design Patterns and TDD",
-              "Developed an Javascript unique Machine Identification"
+              "Internal Intranet using ASP.NET MVC",
+              "Social Network Malware finder",
+              "Heuristic site classifier",
+              "Antivirus GUI in C++",
+              "Javascript unique Machine Identification",
+              "Build scripts in Python",
+              "Design Patterns and TDD"
             ]
           },
           {
             "title": "Team Leader/Scrum Master",
             "tasks": [
-              "Coordinated 6 developers",
-              "Code review",
-              "SVN",
-              "Code coverage",
-              "Performance analysis",
-              "Build automation",
-              "C#",
-              "ASP.NET MVC"
+              "Facilitated 6 developers",
+              "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
+              "ASP.NET MVC Project",
+              "Scrum, Kanban and XP based methodology"
             ]
           },
           {
             "title": "Dev Manager/Product Owner",
             "tasks": [
-              "9 developers",
               "Fraud prevention console",
-              "C#",
-              "ASP.NET MVC",
-              "Javascript",
-              "Scrum",
-              "Kanban",
-              "eXtreme Programming"
+              "Protecting 40 millions of clients"
             ]
           }
         ]
@@ -122,13 +113,13 @@
       {
         "period": "2008-2011",
         "title": "MBA in Project Management (PMBOK based)",
-        "school": "FGV – Fundação Getúlio Vargas (Getúlio Vargas Foundation)"
+        "school": "FGV – Getúlio Vargas Foundation"
       },
       {
         "period": "2002-2006",
         "end": 2006,
         "title": "Bachelor of Science Degree, Computer Science",
-        "school": "UBM – Centro Universitário de Barra Mansa (University Center of Barra Mansa)"
+        "school": "UBM – University Center of Barra Mansa"
       }
     ]
   },
@@ -139,18 +130,38 @@
       {
         "title": "Collaborator in Open Source Community",
         "organization": "github.com/afonsof",
-        "content": "Projects: /BayesSharp, /EvolveSharp /grunt-qunit-cov and /pyhammer"
+        "content": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
       },
       {
         "title": "Co-creator and Presenter",
         "organization": "Event Web Dev Summit 2015",
-        "content": "Organized together Google Developer Group in Rio an event for 200 people"
+        "content": "Organized together Google Developer Group in Rio an event for 200 people."
       },
       {
         "title": "Community Leader",
         "organization": "Jubasulf",
-        "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths"
+        "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths."
       }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications and Trainings",
+    "visible": true,
+    "items": [
+      "Certified Lean-Kanban",
+      "CSPO – Certified Scrum Product Owner",
+      "Management 3.0 - Agile Leadership Practices",
+      "CSM – Certified Scrum Master",
+      "MCP - Programming in HTML5 with Js and CSS3",
+      "GDG Dev Fest Sudeste 2014",
+      "Tableless Conference 2014",
+      "BraziJS 2014",
+      "Black Hat and DefCon 2014",
+      "Agile Trends 2014",
+      "Chrome Dev Summit 2013",
+      "Agile Brazil 2013",
+      "Visual Studio Summit 2013",
+      "ACM – Intern. Collegiate Program. Contest 2006"
     ]
   }
 }
