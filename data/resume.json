@@ -17,7 +17,7 @@
     "items": [
       {
         "title": "Web Programmer",
-        "content": "For 10 years creating software, I started using PHP, passing through .NET and nowadays I enjoy NodeJS."
+        "content": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
       },
       {
         "title": "Agile Enthusiast",
@@ -25,7 +25,7 @@
       },
       {
         "title": "Software Engineer",
-        "content": "I know how is important to use TDD, Refactoring and Code Review to create profitable software."
+        "content": "I know how important it is to use TDD, Refactoring and Code Review in order to create profitable softwares."
       }
     ]
   },
@@ -64,10 +64,9 @@
           {
             "title": "Software Engineer",
             "tasks": [
-              "Internal Intranet using ASP.NET MVC",
+              "Intranet using ASP.NET MVC",
               "Social Network Malware finder",
-              "Heuristic site classifier",
-              "Antivirus GUI in C++",
+              "Heuristic site classifier"
               "Javascript unique Machine Identification",
               "Build scripts in Python",
               "Design Patterns and TDD"
@@ -83,10 +82,11 @@
             ]
           },
           {
-            "title": "Dev Manager/Product Owner",
+            "title": "Dev Manager",
             "tasks": [
               "Fraud prevention console",
-              "Protecting 40 millions of clients"
+              "Protecting 40 millions of clients",
+              "Agile Leadership Practices"
             ]
           }
         ]
