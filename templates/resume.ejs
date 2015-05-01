@@ -1,8 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 
-    <title><%= name %> | <%= title %> | <%= email %></title>
+    <title><%= name %> | <%= title %></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 
     <meta name="keywords" content=""/>
@@ -20,52 +20,51 @@
 
             <h2><%= title %></h2>
         </hgroup>
-        <address>
-            <%= phone %><br>
-            <%= email %><br>
-            <%= site %><br>
-            <%= linkedin %><br>
-        </address>
+        <address style="white-space:pre"><%= contactInfo %></address>
     </header>
 
     <main>
-        <% if(profile.visible) { %>
+        <% for(var sid = 0; sid < sections.length; sid++) {
+            var section = sections[sid];
+        if(section.visible) { %>
+
+        <% if(section.layout == 'text') { %>
         <section>
-            <h2><%= profile.title %></h2>
+            <h2><%= section.title %></h2>
 
             <div class="profile">
-                <p class="enlarge"><%= profile.content %></p>
+                <p class="enlarge"><%= section.content %></p>
             </div>
         </section>
         <% } %>
 
-        <% if(skills.visible) { %>
+        <% if(section.layout == 'titled3Columns') { %>
         <section>
-            <h2><%= skills.title %></h2>
+            <h2><%= section.title %></h2>
 
             <div>
-                <% for(var i = 0; i < skills.items.length; i++) { %>
+                <% for(var i = 0; i < section.items.length; i++) { %>
                 <div class="skill">
-                    <h2><%= skills.items[i].title %></h2>
+                    <h2><%= section.items[i].key %></h2>
 
-                    <p><%= skills.items[i].content %></p>
+                    <p><%= section.items[i].value %></p>
                 </div>
                 <% } %>
             </div>
         </section>
         <% } %>
 
-        <% if(technical.visible) { %>
+        <% if(section.layout == 'list3Columns') { %>
         <section>
-            <h2><%= technical.title %></h2>
+            <h2><%= section.title %></h2>
 
             <div>
-                <% var lineCount = Math.ceil(technical.items.length / 3) %>
-                <% for(var i = 0; i < 3; i++ ){ %>
+                <% var lineCount = Math.ceil(section.items.length / 3) %>
+                <% for(i = 0; i < 3; i++ ){ %>
 
                 <ul class="technical">
                     <% for(var j = 0; j < lineCount; j++ ){ %>
-                    <li><%= technical.items[i * lineCount + j] ? technical.items[i * lineCount + j] : "" %></li>
+                    <li><%= section.items[i * lineCount + j] ? section.items[i * lineCount + j].content : "" %></li>
                     <% } %>
                 </ul>
                 <% } %>
@@ -73,24 +72,24 @@
         </section>
         <% } %>
 
-        <% if(experiences.visible) { %>
+        <% if(section.layout == 'work') { %>
         <section>
 
-            <h2><%= experiences.title %></h2>
+            <h2><%= section.title %></h2>
 
             <div>
-                <% for(var i = 0; i < experiences.items.length; i++) {
-                    var experience = experiences.items[i]; %>
+                <% for( i = 0; i < section.items.length; i++) {
+                    var experience = section.items[i]; %>
                 <div class="experience">
-                    <h2><%= experience.name %></h2>
+                    <h2><%= experience.organization %></h2>
                     <h4><%= experience.period %></h4>
-                    <% for(var i1 = 0; i1 < experience.occupations.length; i1++) {
+                    <% for( var i1 = 0; i1 < experience.occupations.length; i1++) {
                         var occupation = experience.occupations[i1]; %>
                     <div class="occupation">
                         <h3><%= occupation.title %></h3>
 
                         <p>
-                            <% for(var j = 0; j < occupation.tasks.length; j++){ %>
+                            <% for( j = 0; j < occupation.tasks.length; j++){ %>
                             <%= j !== 0 ? "•" : "" %>
                             <%= occupation.tasks[j] %>
                             <% } %>
@@ -103,25 +102,26 @@
         </section>
         <% } %>
 
-        <% if(educations.visible) { %>
+        <% if(section.layout == "education") { %>
         <section class="educations">
-            <h2><%= educations.title %></h2>
-            <% for(var i = 0; i < educations.items.length; i++ ) {
-                var education = educations.items[i]; %>
+            <h2><%= section.title %></h2>
+            <% for(i = 0; i < section.items.length; i++ ) {
+                var education = section.items[i]; %>
             <div class="education">
                 <h2><%= education.title %></h2>
-                <h3><%= education.school %></h3>
+
+                <h3><%= education.organization %></h3>
                 <h4><%= education.period %></h4>
             </div>
             <% } %>
         </section>
         <% } %>
 
-        <% if(volunteers.visible) { %>
+        <% if(section.layout == "volunteer") { %>
         <section>
-            <h2><%= volunteers.title %></h2>
-            <% for(var i = 0; i < volunteers.items.length; i++ ) {
-                var volunteer = volunteers.items[i]; %>
+            <h2><%= section.title %></h2>
+            <% for( i = 0; i < section.items.length; i++ ) {
+                var volunteer = section.items[i]; %>
             <div class="volunteer">
                 <h2><%= volunteer.title %></h2>
 
@@ -133,17 +133,17 @@
         </section>
         <% } %>
 
-        <% if(certifications.visible) { %>
+        <% if(section.layout == "list2Columns") { %>
         <section>
-            <h2><%= certifications.title %></h2>
+            <h2><%= section.title %></h2>
 
             <div>
-                <% var lineCount = Math.ceil(certifications.items.length / 2) %>
-                <% for(var i = 0; i < 2; i++ ){ %>
+                <% lineCount = Math.ceil(section.items.length / 2) %>
+                <% for(i = 0; i < 2; i++ ){ %>
 
                 <ul class="certifications">
-                    <% for(var j = 0; j < lineCount; j++ ){ %>
-                    <li><%= certifications.items[i * lineCount + j] ? certifications.items[i * lineCount + j] : "" %></li>
+                    <% for(j = 0; j < lineCount; j++ ){ %>
+                    <li><%= section.items[i * lineCount + j] ? section.items[i * lineCount + j].content : "" %></li>
                     <% } %>
                 </ul>
                 <% } %>
@@ -151,6 +151,8 @@
         </section>
         <% } %>
 
+        <% } %>
+        <% } %>
     </main>
 </div>
 </body>

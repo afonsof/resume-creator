@@ -7,27 +7,36 @@ module.exports = function (grunt) {
             test: {
                 src: 'templates/resume.ejs',
                 options: require('./data/resume.json'),
-                dest: 'dist/resume.html'
+                dest: 'prototype-dist/resume.html'
             }
         },
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'templates/', src: ['**'], dest: 'dist/'}
+                    {expand: true, cwd: 'templates/', src: ['**'], dest: 'prototype-dist/'}
                 ]
             }
         },
         clean: {
-            main: ["dist/*.ejs", "dist/*.scss"]
+            main: ["prototype-dist/*.ejs", "prototype-dist/*.scss"]
         },
         sass: {
+            prototype: {
+                options: {
+                    style: 'expanded',
+                    sourcemap: 'none'
+                },
+                files: {
+                    'prototype-dist/resume.css': 'templates/resume.scss'
+                }
+            },
             dist: {
                 options: {
                     style: 'expanded',
                     sourcemap: 'none'
                 },
                 files: {
-                    'dist/resume.css': 'templates/resume.scss'
+                    'site/css/resume.css': 'templates/resume.scss'
                 }
             }
         }
@@ -40,6 +49,7 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     // Default task(s).
-    grunt.registerTask('default', ['ejs', 'sass', 'copy', 'clean']);
+    grunt.registerTask('default', ['ejs', 'sass:prototype', 'copy', 'clean']);
+    grunt.registerTask('build', ['sass:dist']);
 
 };

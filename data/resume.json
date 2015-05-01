@@ -1,167 +1,192 @@
 {
   "name": "Afonso França de Oliveira",
   "title": "Software Engineer",
-  "location": "São Paulo / Brazil",
-  "phone": "+55 24 99947-5822",
-  "email": "afonso.franca@gmail.com",
-  "site": "afonsof.com • github.com/afonsof",
-  "linkedin": "linkedin.com/in/afonsof",
-  "profile": {
-    "visible": false,
-    "title": "Profile",
-    "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
-  },
-  "skills": {
-    "title": "Main Skills",
-    "visible": true,
-    "items": [
-      {
-        "title": "Web Programmer",
-        "content": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
-      },
-      {
-        "title": "Agile Enthusiast",
-        "content": "I've already worn the hat of Scrum Master and Product Owner, In these days we are also using some Kanban principles."
-      },
-      {
-        "title": "Software Engineer",
-        "content": "I know how important it is to use TDD, Refactoring and Code Review in order to create profitable softwares."
-      }
-    ]
-  },
-  "technical": {
-    "title": "Technical",
-    "visible": true,
-    "items": [
-      "Javascript",
-      "C#/ASP.NET MVC",
-      "HTML5",
-      "NodeJS",
-      "CSS3",
-
-      "Agile",
-      "XP",
-      "Kanban",
-      "Scrum",
-      "Python",
-
-      "Code Coverage",
-      "Design Patterns",
-      "TDD",
-      "CVS",
-      "Continuous Integration"
-    ]
-  },
-  "experiences": {
-    "visible": true,
-    "title": "Work Experiences",
-    "items": [
-      {
-        "period": "2006-current",
-        "name": "Diebold Inc.",
-        "location": "São Paulo - Brazil",
-        "occupations": [
-          {
-            "title": "Software Engineer",
-            "tasks": [
-              "Intranet using ASP.NET MVC",
-              "Social Network Malware finder",
-              "Heuristic site classifier",
-              "Javascript unique Machine Identification",
-              "Build scripts in Python",
-              "Design Patterns and TDD"
-            ]
-          },
-          {
-            "title": "Team Leader/Scrum Master",
-            "tasks": [
-              "Facilitated 6 developers",
-              "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
-              "ASP.NET MVC Project",
-              "Scrum, Kanban and XP based methodology"
-            ]
-          },
-          {
-            "title": "Dev Manager",
-            "tasks": [
-              "Fraud prevention console",
-              "Protecting 40 millions of clients",
-              "Agile Leadership Practices"
-            ]
-          }
-        ]
-      },
-      {
-        "period": "2005-2006",
-        "name": "Flextronics International",
-        "location": "Rio de Janeiro - Brazil",
-        "occupations": [
-          {
-            "title": "IT Trainee",
-            "tasks": [
-              "Delivered internal softwares made using PHP"
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  "educations": {
-    "visible": true,
-    "title": "Education",
-    "items": [
-      {
-        "period": "2008-2011",
-        "title": "MBA in Project Management (PMBOK based)",
-        "school": "FGV – Getúlio Vargas Foundation"
-      },
-      {
-        "period": "2002-2006",
-        "end": 2006,
-        "title": "Bachelor of Science Degree, Computer Science",
-        "school": "UBM – University Center of Barra Mansa"
-      }
-    ]
-  },
-  "volunteers": {
-    "title": "Volunteer Experience",
-    "visible": true,
-    "items": [
-      {
-        "title": "Collaborator in Open Source Community",
-        "organization": "github.com/afonsof",
-        "content": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
-      },
-      {
-        "title": "Co-creator and Presenter",
-        "organization": "Event Web Dev Summit 2015",
-        "content": "Organized together Google Developer Group in Rio an event for 200 people."
-      },
-      {
-        "title": "Community Leader",
-        "organization": "Jubasulf",
-        "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths."
-      }
-    ]
-  },
-  "certifications": {
-    "title": "Certifications and Trainings",
-    "visible": true,
-    "items": [
-      "Certified Lean-Kanban",
-      "CSPO – Certified Scrum Product Owner",
-      "Management 3.0 - Agile Leadership Practices",
-      "CSM – Certified Scrum Master",
-      "MCP - Programming in HTML5 with Js and CSS3",
-      "GDG Dev Fest Sudeste 2014",
-      "Tableless Conference 2014",
-      "BraziJS 2014",
-      "Black Hat and DefCon 2014",
-      "Agile Trends 2014",
-      "Chrome Dev Summit 2013",
-      "Agile Brazil 2013",
-      "Visual Studio Summit 2013",
-      "ACM – Intern. Collegiate Program. Contest 2006"
-    ]
-  }
+  "contactInfo": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof",
+  "sections": [
+    {
+      "title": "Personal",
+      "order": 0,
+      "type": "personal",
+      "name": "Afonso França de Oliveira",
+      "personTitle": "Software Engineer",
+      "contactInfo": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof"
+    },
+    {
+      "title": "Profile",
+      "order": 1,
+      "type": "text",
+      "layout": "text",
+      "visible": true,
+      "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
+    },
+    {
+      "title": "Main Skills",
+      "order": 2,
+      "type": "keyValuePair",
+      "layout": "titled3Columns",
+      "visible": true,
+      "items": [
+        {
+          "key": "Web Programmer",
+          "value": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
+        },
+        {
+          "key": "Agile Enthusiast",
+          "value": "I've already worn the hat of Scrum Master and Product Owner, In these days we are also using some Kanban principles."
+        },
+        {
+          "key": "Software Engineer",
+          "value": "I know how is important to use TDD, Refactoring and Code Review to create profitable software."
+        }
+      ]
+    },
+    {
+      "title": "Technical",
+      "order": 3,
+      "type": "array",
+      "layout": "list3Columns",
+      "visible": true,
+      "items": [
+        {"content": "Javascript"},
+        {"content": "C#/ASP.NET MVC"},
+        {"content": "HTML5"},
+        {"content": "NodeJS"},
+        {"content": "CSS3"},
+        {"content": "Agile"},
+        {"content": "XP"},
+        {"content": "Kanban"},
+        {"content": "Scrum"},
+        {"content": "Python"},
+        {"content": "Code Coverage"},
+        {"content": "Design Patterns"},
+        {"content": "TDD"},
+        {"content": "CVS"},
+        {"content": "Continuous Integration"}
+      ]
+    },
+    {
+      "title": "Work Experiences",
+      "order": 4,
+      "visible": true,
+      "type": "occupationList",
+      "layout": "work",
+      "items": [
+        {
+          "period": "2006-current",
+          "organization": "Diebold Inc.",
+          "location": "São Paulo - Brazil",
+          "occupations": [
+            {
+              "title": "Software Engineer",
+              "tasks": [
+                "Intranet using ASP.NET MVC",
+                "Social Network Malware finder",
+                "Heuristic site classifier",
+                "Javascript unique Machine Identification",
+                "Build scripts in Python",
+                "Design Patterns and TDD"
+              ]
+            },
+            {
+              "title": "Team Leader/Scrum Master",
+              "tasks": [
+                "Facilitated 6 developers",
+                "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
+                "ASP.NET MVC Project",
+                "Scrum, Kanban and XP based methodology"
+              ]
+            },
+            {
+              "title": "Dev Manager",
+              "tasks": [
+                "Fraud prevention console",
+                "Protecting 40 millions of clients",
+                "Agile Leadership Practices"
+              ]
+            }
+          ]
+        },
+        {
+          "period": "2005-2006",
+          "organization": "Flextronics International",
+          "location": "Rio de Janeiro - Brazil",
+          "occupations": [
+            {
+              "title": "IT Trainee",
+              "tasks": [
+                "Delivered internal softwares made using PHP"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "order": 5,
+      "visible": true,
+      "type": "occupationList",
+      "layout": "education",
+      "items": [
+        {
+          "period": "2008-2011",
+          "title": "MBA in Project Management (PMBOK based)",
+          "organization": "FGV – Getúlio Vargas Foundation"
+        },
+        {
+          "period": "2002-2006",
+          "end": 2006,
+          "title": "Bachelor of Science Degree, Computer Science",
+          "organization": "UBM – University Center of Barra Mansa"
+        }
+      ]
+    },
+    {
+      "title": "Volunteer Experience",
+      "order": 6,
+      "visible": true,
+      "type": "occupationList",
+      "layout": "volunteer",
+      "items": [
+        {
+          "title": "Collaborator in Open Source Community",
+          "organization": "github.com/afonsof",
+          "content": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
+        },
+        {
+          "title": "Co-creator and Presenter",
+          "organization": "Event Web Dev Summit 2015",
+          "content": "Organized together Google Developer Group in Rio an event for 200 people."
+        },
+        {
+          "title": "Community Leader",
+          "organization": "Jubasulf",
+          "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths."
+        }
+      ]
+    },
+    {
+      "title": "Certifications and Trainings",
+      "order": 7,
+      "type": "array",
+      "layout": "list2Columns",
+      "visible": true,
+      "items": [
+        {"content": "Certified Lean-Kanban"},
+        {"content": "CSPO – Certified Scrum Product Owner"},
+        {"content": "Management 3.0 - Agile Leadership Practices"},
+        {"content": "CSM – Certified Scrum Master"},
+        {"content": "MCP - Programming in HTML5 with Js and CSS3"},
+        {"content": "GDG Dev Fest Sudeste 2014"},
+        {"content": "Tableless Conference 2014"},
+        {"content": "BraziJS 2014"},
+        {"content": "Black Hat and DefCon 2014"},
+        {"content": "Agile Trends 2014"},
+        {"content": "Chrome Dev Summit 2013"},
+        {"content": "Agile Brazil 2013"},
+        {"content": "Visual Studio Summit 2013"},
+        {"content": "ACM – Intern. Collegiate Program. Contest 2006"}
+      ]
+    }
+  ]
 }
