@@ -3,6 +3,7 @@ var ejs = require('ejs');
 var fs = require('fs');
 
 var app = express();
+app.set('port', (process.env.PORT || 5000));
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
@@ -15,6 +16,6 @@ app.post('/', function (req, res) {
     res.send(ejs.render(template, data, {}));
 });
 
-app.listen(3000, function () {
+app.listen(app.get('port'), function () {
     console.log('Running!');
 });
