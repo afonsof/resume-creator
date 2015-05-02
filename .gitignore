@@ -5,4 +5,3 @@ dist/
 .DS_Store
 prototype-dist/
 site/bower_components
-site/css

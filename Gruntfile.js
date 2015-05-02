@@ -50,6 +50,6 @@ module.exports = function (grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['ejs', 'sass:prototype', 'copy', 'clean']);
-    grunt.registerTask('heroku', ['sass:dist']);
+    grunt.registerTask('heroku', []);
 
 };
