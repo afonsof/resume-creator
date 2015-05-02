@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         ejs: {
             test: {
                 src: 'templates/resume.ejs',
-                options: require('./data/resume.json'),
+                options: require('./site/resume.json'),
                 dest: 'prototype-dist/resume.html'
             }
         },

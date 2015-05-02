@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="angularjs-starter">
+<html ng-app="resume-creator">
 
 <head lang="en">
     <meta charset="utf-8">
@@ -8,11 +8,13 @@
 
     <meta charset="utf-8">
     <title>Resume Creator</title>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="bower_components/angular-toasty/css/ng-toasty.css" rel="stylesheet"/>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/script.js"></script>
 
     <style>
         .box {
@@ -35,149 +37,203 @@
             letter-spacing: 1px;
             margin-top: 0;
         }
+
+        .alert-success {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            margin: 0 auto;
+            z-index: 5000;
+            width: 300px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
-<body ng-controller="MainCtrl">
+<body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Resume Creator</a>
-        </div>
+<div ng-controller="MainCtrl">
+
+    <div ng-show="message" class="alert alert-success alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+        {{message}}
     </div>
-</nav>
 
-<div class="container">
-    <div style="margin-top: 60px; padding-bottom: 10px" class="box">
-        <button class="btn btn-primary" ng-click="generate()">Generate Resume</button>
-        <button class="btn btn-default" ng-click="export()">Export</button>
-        <button class="btn btn-defaul" data-toggle="modal" data-target="#importModal">Import...</button>
-    </div>
-    <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px">
-        <li role="presentation" ng-class="defaultTab==currentTab?'active':''">
-            <a href="#" ng-click="changeTab(defaultTab)" role="tab" data-toggle="tab">{{defaultTab}}</a>
-        </li>
-        <li ng-repeat="section in jsonData.sections | orderBy:'order'"
-            role="presentation" ng-class="section.title==currentTab?'active':''">
-            <a href="#" ng-click="changeTab(section.title)" role="tab" data-toggle="tab">{{section.title}}</a>
-        </li>
-    </ul>
 
-    <div ng-show="currentTab==defaultTab">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" ng-model="jsonData.name"/>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Resume Creator</a>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" ng-model="jsonData.title"/>
+    </nav>
+
+    <div class="container" ng-show="jsonData">
+        <div style="margin-top: 60px; padding-bottom: 10px" class="box">
+            <button class="btn btn-primary" ng-click="generate()">Generate Resume</button>
+            <button class="btn btn-default" ng-click="export()">Export</button>
+            <button class="btn btn-default" data-toggle="modal" data-target="#importModal">Import...</button>
         </div>
-        <div class="form-group">
-            <label>Contact</label>
+        <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px">
+            <li role="presentation" ng-class="defaultTab==currentTab?'active':''">
+                <a href="#" ng-click="changeTab(defaultTab)" role="tab" data-toggle="tab">{{defaultTab}}</a>
+            </li>
+            <li ng-repeat="section in jsonData.sections | orderBy:'order'"
+                role="presentation" ng-class="section.title==currentTab?'active':''">
+                <a href="#" ng-click="changeTab(section.title)" role="tab" data-toggle="tab">{{section.title}}</a>
+            </li>
+        </ul>
+
+        <div ng-show="currentTab==defaultTab">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" ng-model="jsonData.name"/>
+            </div>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" ng-model="jsonData.title"/>
+            </div>
+            <div class="form-group">
+                <label>Contact</label>
                 <textarea type="text" class="form-control" ng-model="jsonData.contactInfo"
                           style="height: 100px"></textarea>
-        </div>
-    </div>
-
-    <div ng-repeat="section in jsonData.sections" ng-show="currentTab==section.title">
-
-        <div class="form-group" ng-hide="section.type=='personal'">
-            <input type="checkbox" ng-model="section.visible"> Enabled
-        </div>
-
-        <div ng-show="section.type=='keyValuePair' && section.visible">
-            <div ng-repeat="(key,item) in section.items" class="box">
-                <h3>Item {{key+1}}</h3>
-
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" ng-model="item.key"/>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <input type="text" class="form-control" ng-model="item.value"/>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-default" ng-click="section.items.splice(key, 1)">Remove</button>
-                </div>
             </div>
-            <button class="btn btn-default" ng-click="section.items.push({})">Add another</button>
         </div>
 
-        <div ng-show="section.type=='occupationList' && section.visible">
-            <div ng-repeat="(key, item) in section.items" class="box">
-                <h3>Item {{key+1}}</h3>
+        <div ng-repeat="section in jsonData.sections" ng-show="currentTab==section.title">
 
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" ng-model="item.title"/>
+            <div class="form-group" ng-hide="section.type=='personal'">
+                <input type="checkbox" ng-model="section.visible"> Enabled
+            </div>
+
+            <div ng-show="section.type=='keyValuePair' && section.visible">
+                <div ng-repeat="(key,item) in section.items" class="box">
+                    <h3>Item {{key+1}}</h3>
+
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" class="form-control" ng-model="item.key"/>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <input type="text" class="form-control" ng-model="item.value"/>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" ng-click="section.items.splice(key, 1)">Remove</button>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Period</label>
-                    <input type="text" class="form-control" ng-model="item.period"/>
-                </div>
-                <div class="form-group">
-                    <label>Organization</label>
-                    <input type="text" class="form-control" ng-model="item.organization"/>
-                </div>
-                <div class="form-group">
-                    <label>Location</label>
-                    <input type="text" class="form-control" ng-model="item.location"/>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <input type="text" class="form-control" ng-model="item.content"/>
-                </div>
-                <ul ng-repeat="occ in item.occupations">
-                    <li><input type="text" class="form-control" ng-model="occ.title"/>
-                        <ul ng-repeat="task in occ.tasks">
-                            <li><input type="text" class="form-control" ng-model="task"/></li>
+                <button class="btn btn-default" ng-click="section.items.push({})">Add another</button>
+            </div>
+
+            <div ng-show="section.type=='occupationList' && section.visible">
+                <div ng-repeat="(key, item) in section.items" class="box">
+                    <h3>Item {{key+1}}</h3>
+
+
+                    <div class="form-group">
+                        <label>Organization</label>
+                        <input type="text" class="form-control" ng-model="item.organization"/>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label>Period</label>
+                            <input type="text" class="form-control" ng-model="item.period"/>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Location</label>
+                            <input type="text" class="form-control" ng-model="item.location"/>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group" ng-hide="section.layout=='work'">
+                        <label>Title</label>
+                        <input type="text" class="form-control" ng-model="item.title"/>
+                    </div>
+
+                    <div class="form-group" ng-hide="section.layout=='work'">
+                        <label>Content</label>
+                        <input type="text" class="form-control" ng-model="item.content"/>
+                    </div>
+                    <div ng-show="item.occupations && section.layout=='work'">
+                        <h4>Occupations</h4>
+                        <ul>
+                            <li class="form-group" ng-repeat="(oid, occ) in item.occupations">
+                                <button ng-click="item.occupations.splice(oid, 1)">-</button>
+                                <label>Title</label>
+                                <input type="text" class="form-control" ng-model="occ.title"/>
+                                <label>Tasks</label>
+
+                                <div ng-repeat="(tid, task) in occ.tasks">
+                                    <button ng-click="occ.tasks.splice(tid, 1)">-</button>
+                                    <input type="text" class="form-control" ng-model="task.content"/>
+                                </div>
+                                <button class="btn btn-default" ng-click="occ.tasks.push({})">Add task</button>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
+                        </li>
+                        <li>
+                            <button class="btn btn-default" ng-click="item.occupations.push({tasks:[]})">Add
+                                occupation
+                            </button>
+                        </li>
+                        </ul>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-default" ng-click="section.items.splice(key, 1)">Remove</button>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-default" ng-click="section.items.push({occupations:[]})">Add another</button>
+            </div>
+
+            <div ng-show="section.type=='text' && section.visible" class="form-group">
+                <textarea class="form-control" ng-model="section.content" style="height: 100px"></textarea>
+            </div>
+
+            <div ng-show="section.type=='array' && section.visible">
+                <div ng-repeat="(key, value) in section.items" class="form-group">
+                    <button ng-click="section.items.splice(key, 1)">-</button>
+                    <input type="text" class="form-control" ng-model="value.content"/>
+                </div>
+                <button ng-click="section.items.push({})">+</button>
             </div>
         </div>
+        <hr>
 
-        <div ng-show="section.type=='text' && section.visible" class="form-group">
-            <textarea class="form-control" ng-model="section.content" style="height: 100px"></textarea>
-        </div>
+        <footer>
+            <p>&copy; Afonso França 2015</p>
+        </footer>
+    </div>
 
-        <div ng-show="section.type=='array' && section.visible">
-            <div ng-repeat="(key, value) in section.items" class="form-group">
-                <button ng-click="section.items.splice(key, 1)">-</button>
-                <input type="text" class="form-control" ng-model="value.content"/>
+    <!-- Modal -->
+    <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Import file</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="file" id="file" name="file"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="import()">Import
+                    </button>
+                </div>
             </div>
-            <button ng-click="section.items.push({})">+</button>
         </div>
     </div>
-    <hr>
-
-    <footer>
-        <p>&copy; Afonso França 2015</p>
-    </footer>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Import file</h4>
-            </div>
-            <div class="modal-body">
-                <input type="file" id="file" name="file"/>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="import()">Import</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
-
 
 </html>

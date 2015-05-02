@@ -2,15 +2,8 @@
   "name": "Afonso França de Oliveira",
   "title": "Software Engineer",
   "contactInfo": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof",
+
   "sections": [
-    {
-      "title": "Personal",
-      "order": 0,
-      "type": "personal",
-      "name": "Afonso França de Oliveira",
-      "personTitle": "Software Engineer",
-      "contactInfo": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof"
-    },
     {
       "title": "Profile",
       "order": 1,
@@ -52,11 +45,13 @@
         {"content": "HTML5"},
         {"content": "NodeJS"},
         {"content": "CSS3"},
+
         {"content": "Agile"},
         {"content": "XP"},
         {"content": "Kanban"},
         {"content": "Scrum"},
         {"content": "Python"},
+
         {"content": "Code Coverage"},
         {"content": "Design Patterns"},
         {"content": "TDD"},
@@ -79,29 +74,29 @@
             {
               "title": "Software Engineer",
               "tasks": [
-                "Intranet using ASP.NET MVC",
-                "Social Network Malware finder",
-                "Heuristic site classifier",
-                "Javascript unique Machine Identification",
-                "Build scripts in Python",
-                "Design Patterns and TDD"
+                {"content": "Intranet using ASP.NET MVC"},
+                {"content": "Social Network Malware finder"},
+                {"content": "Heuristic site classifier"},
+                {"content": "Javascript unique Machine Identification"},
+                {"content": "Build scripts in Python"},
+                {"content": "Design Patterns and TDD"}
               ]
             },
             {
               "title": "Team Leader/Scrum Master",
               "tasks": [
-                "Facilitated 6 developers",
-                "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage",
-                "ASP.NET MVC Project",
-                "Scrum, Kanban and XP based methodology"
+                {"content": "Facilitated 6 developers"},
+                {"content": "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage"},
+                {"content": "ASP.NET MVC Project"},
+                {"content": "Scrum, Kanban and XP based methodology"}
               ]
             },
             {
               "title": "Dev Manager",
               "tasks": [
-                "Fraud prevention console",
-                "Protecting 40 millions of clients",
-                "Agile Leadership Practices"
+                {"content": "Fraud prevention console"},
+                {"content": "Protecting 40 millions of clients"},
+                {"content": "Agile Leadership Practices"}
               ]
             }
           ]
@@ -114,7 +109,7 @@
             {
               "title": "IT Trainee",
               "tasks": [
-                "Delivered internal softwares made using PHP"
+                {"content": "Delivered internal softwares made using PHP"}
               ]
             }
           ]

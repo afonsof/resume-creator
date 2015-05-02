@@ -91,7 +91,7 @@
                         <p>
                             <% for( j = 0; j < occupation.tasks.length; j++){ %>
                             <%= j !== 0 ? "•" : "" %>
-                            <%= occupation.tasks[j] %>
+                            <%= occupation.tasks[j].content %>
                             <% } %>
                         </p>
                     </div>
@@ -110,8 +110,14 @@
             <div class="education">
                 <h2><%= education.title %></h2>
 
-                <h3><%= education.organization %></h3>
+                <h3><%= education.organization %>
+                <% if(education.location){%> - <%=education.location %><% } %>
+                </h3>
                 <h4><%= education.period %></h4>
+                <% if(education.content) { %>
+                <p style="margin-top: -8px; margin-bottom: 10px"><%= education.content %></p>
+                <% } %>
+
             </div>
             <% } %>
         </section>
@@ -127,7 +133,12 @@
 
                 <h3><%= volunteer.organization %></h3>
 
-                <p><%= volunteer.content %></p>
+                <p><%= volunteer.content %>
+                    <% if(volunteer.location || volunteer.period) { %>
+                    <br><%= volunteer.period %> <%= volunteer.location %>
+                    <% } %>
+                </p>
+
             </div>
             <% } %>
         </section>
