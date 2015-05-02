@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.4",
-    "angular-toasty": "~0.1.8"
+    "angular-toasty": "~0.1.8",
+    "angulartics": "~0.17.2"
   }
 }

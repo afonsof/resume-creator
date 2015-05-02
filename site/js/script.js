@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('resume-creator', []);
+var app = angular.module('resume-creator', ['angulartics', 'angulartics.google.analytics']);
 
 app.controller('MainCtrl', function ($scope, $http) {
 
