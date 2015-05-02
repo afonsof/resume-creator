@@ -201,7 +201,7 @@ app.controller('MainCtrl', function ($scope) {
 
     var a;
 
-    $scope.download = function () {
+    $scope.export = function () {
         if (!a) {
             var a = document.createElement("a");
             document.body.appendChild(a);
@@ -216,7 +216,7 @@ app.controller('MainCtrl', function ($scope) {
         window.URL.revokeObjectURL(url);
     };
 
-    $scope.upload = function () {
+    $scope.import = function () {
         // Check for the various File API support.
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             var files = document.getElementById('file').files;
