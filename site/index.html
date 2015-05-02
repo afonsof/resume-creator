@@ -1,158 +1,75 @@
 <!DOCTYPE html>
-<html ng-app="angularjs-starter">
-
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>Resume Creator</title>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="js/script.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        .box {
-            margin-right: 0;
-            margin-left: 0;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px 4px 0 0;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            padding: 10px 10px 0px;
-            margin-bottom: 10px;
-        }
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-        .box h3 {
-            font-size: 12px;
-            font-weight: 700;
-            color: #959595;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0;
-        }
-    </style>
+    <title>Resume Creator - Create your resume in various languages</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
 </head>
 
-<body ng-controller="MainCtrl">
+<body>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Resume Creator</a>
+            <a class="navbar-brand" href="#">Resume Creator - Create your resume in various languages</a>
         </div>
     </div>
 </nav>
 
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Create a multi-language resume fast!</h1>
+
+        <p>Do want to create your resume in order to send to various countries. LinkedIn printed resume does not fit to
+            your necessities? This is the right tool for you!</p>
+
+        <p><a class="btn btn-primary btn-lg" href="creator.html" role="button">Start creating &raquo;</a></p>
+    </div>
+</div>
+
 <div class="container">
-    <div style="margin-top: 60px; padding-bottom: 10px" class="box">
-        <button class="btn btn-primary" ng-click="generate()">Generate Resume</button>
-        <button class="btn btn-primary" ng-click="download()">Download</button>
-        <input type="file" id="file" name="file"/>
-        <button class="btn btn-primary" ng-click="upload()">Upload</button>
-    </div>
-    <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px">
-        <li role="presentation" ng-class="defaultTab==currentTab?'active':''">
-            <a href="#" ng-click="changeTab(defaultTab)" role="tab" data-toggle="tab">{{defaultTab}}</a>
-        </li>
-        <li ng-repeat="section in jsonData.sections | orderBy:'order'"
-            role="presentation" ng-class="section.title==currentTab?'active':''">
-            <a href="#" ng-click="changeTab(section.title)" role="tab" data-toggle="tab">{{section.title}}</a>
-        </li>
-    </ul>
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Use in HTML, printed or PDF</h2>
 
-    <div ng-show="currentTab==defaultTab">
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" ng-model="jsonData.name"/>
+            <p>You can use to send e-mails, attach to your portifolio or even print and send inside an envelope.
+                If you need it in PDF format you can simply print as it in Google Chrome.</p>
         </div>
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" ng-model="jsonData.personTitle"/>
+        <div class="col-md-4">
+            <h2>English, portuguese, spanish, whatever...</h2>
+
+            <p>In short you can create your resume in two languages and can easily handle possible modifications.</p>
         </div>
-        <div class="form-group">
-            <label>Contact</label>
-                <textarea type="text" class="form-control" ng-model="jsonData.contactInfo"
-                          style="height: 100px"></textarea>
+        <div class="col-md-4">
+            <h2>Export and Import</h2>
+
+            <p>If you want to save your job to continue after you can download a small file.
+                So you just need to load again that file to continue editing.</p>
+
+            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
     </div>
 
-    <div ng-repeat="section in jsonData.sections" ng-show="currentTab==section.title">
-
-        <div class="form-group" ng-hide="section.type=='personal'">
-            <input type="checkbox" ng-model="section.visible"> Enabled
-        </div>
-
-        <div ng-show="section.type=='keyValuePair' && section.visible">
-            <div ng-repeat="(key,item) in section.items" class="box">
-                <h3>Item {{key+1}}</h3>
-
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" ng-model="item.key"/>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <input type="text" class="form-control" ng-model="item.value"/>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-default" ng-click="section.items.splice(key, 1)">Remove</button>
-                </div>
-            </div>
-            <button class="btn btn-default" ng-click="section.items.push({})">Add another</button>
-        </div>
-
-        <div ng-show="section.type=='occupationList' && section.visible">
-            <div ng-repeat="(key, item) in section.items" class="box">
-                <h3>Item {{key+1}}</h3>
-
-                <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" class="form-control" ng-model="item.title"/>
-                </div>
-                <div class="form-group">
-                    <label>Period</label>
-                    <input type="text" class="form-control" ng-model="item.period"/>
-                </div>
-                <div class="form-group">
-                    <label>Organization</label>
-                    <input type="text" class="form-control" ng-model="item.organization"/>
-                </div>
-                <div class="form-group">
-                    <label>Location</label>
-                    <input type="text" class="form-control" ng-model="item.location"/>
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <input type="text" class="form-control" ng-model="item.content"/>
-                </div>
-                <ul ng-repeat="occ in item.occupations">
-                    <li><input type="text" class="form-control" ng-model="occ.title"/>
-                        <ul ng-repeat="task in occ.tasks">
-                            <li><input type="text" class="form-control" ng-model="task"/></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div ng-show="section.type=='text' && section.visible" class="form-group">
-            <textarea class="form-control" ng-model="section.content" style="height: 100px"></textarea>
-        </div>
-
-        <div ng-show="section.type=='array' && section.visible">
-            <div ng-repeat="(key, value) in section.items" class="form-group">
-                <button ng-click="section.items.splice(key, 1)">-</button>
-                <input type="text" class="form-control" ng-model="value.content"/>
-            </div>
-            <button ng-click="section.items.push({})">+</button>
-        </div>
-    </div>
     <hr>
 
     <footer>
-        <p>&copy; Afonso França 2015</p>
+        <p>&copy; Afonso F 2014</p>
     </footer>
 </div>
+<!-- /container -->
 </body>
-
-
 </html>

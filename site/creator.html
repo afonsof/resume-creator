@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Resume Creator</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/script.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+
+    <style>
+        .box {
+            margin-right: 0;
+            margin-left: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px 4px 0 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            padding: 10px 10px 0px;
+            margin-bottom: 10px;
+        }
+
+        .box h3 {
+            font-size: 12px;
+            font-weight: 700;
+            color: #959595;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body ng-controller="MainCtrl">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Resume Creator</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div style="margin-top: 60px; padding-bottom: 10px" class="box">
+        <button class="btn btn-primary" ng-click="generate()">Generate Resume</button>
+        <button class="btn btn-primary" ng-click="download()">Download</button>
+        <input type="file" id="file" name="file"/>
+        <button class="btn btn-primary" ng-click="upload()">Upload</button>
+    </div>
+    <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px">
+        <li role="presentation" ng-class="defaultTab==currentTab?'active':''">
+            <a href="#" ng-click="changeTab(defaultTab)" role="tab" data-toggle="tab">{{defaultTab}}</a>
+        </li>
+        <li ng-repeat="section in jsonData.sections | orderBy:'order'"
+            role="presentation" ng-class="section.title==currentTab?'active':''">
+            <a href="#" ng-click="changeTab(section.title)" role="tab" data-toggle="tab">{{section.title}}</a>
+        </li>
+    </ul>
+
+    <div ng-show="currentTab==defaultTab">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" ng-model="jsonData.name"/>
+        </div>
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" ng-model="jsonData.personTitle"/>
+        </div>
+        <div class="form-group">
+            <label>Contact</label>
+                <textarea type="text" class="form-control" ng-model="jsonData.contactInfo"
+                          style="height: 100px"></textarea>
+        </div>
+    </div>
+
+    <div ng-repeat="section in jsonData.sections" ng-show="currentTab==section.title">
+
+        <div class="form-group" ng-hide="section.type=='personal'">
+            <input type="checkbox" ng-model="section.visible"> Enabled
+        </div>
+
+        <div ng-show="section.type=='keyValuePair' && section.visible">
+            <div ng-repeat="(key,item) in section.items" class="box">
+                <h3>Item {{key+1}}</h3>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="item.key"/>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <input type="text" class="form-control" ng-model="item.value"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-default" ng-click="section.items.splice(key, 1)">Remove</button>
+                </div>
+            </div>
+            <button class="btn btn-default" ng-click="section.items.push({})">Add another</button>
+        </div>
+
+        <div ng-show="section.type=='occupationList' && section.visible">
+            <div ng-repeat="(key, item) in section.items" class="box">
+                <h3>Item {{key+1}}</h3>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" ng-model="item.title"/>
+                </div>
+                <div class="form-group">
+                    <label>Period</label>
+                    <input type="text" class="form-control" ng-model="item.period"/>
+                </div>
+                <div class="form-group">
+                    <label>Organization</label>
+                    <input type="text" class="form-control" ng-model="item.organization"/>
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" class="form-control" ng-model="item.location"/>
+                </div>
+                <div class="form-group">
+                    <label>Content</label>
+                    <input type="text" class="form-control" ng-model="item.content"/>
+                </div>
+                <ul ng-repeat="occ in item.occupations">
+                    <li><input type="text" class="form-control" ng-model="occ.title"/>
+                        <ul ng-repeat="task in occ.tasks">
+                            <li><input type="text" class="form-control" ng-model="task"/></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div ng-show="section.type=='text' && section.visible" class="form-group">
+            <textarea class="form-control" ng-model="section.content" style="height: 100px"></textarea>
+        </div>
+
+        <div ng-show="section.type=='array' && section.visible">
+            <div ng-repeat="(key, value) in section.items" class="form-group">
+                <button ng-click="section.items.splice(key, 1)">-</button>
+                <input type="text" class="form-control" ng-model="value.content"/>
+            </div>
+            <button ng-click="section.items.push({})">+</button>
+        </div>
+    </div>
+    <hr>
+
+    <footer>
+        <p>&copy; Afonso França 2015</p>
+    </footer>
+</div>
+</body>
+
+
+</html>
