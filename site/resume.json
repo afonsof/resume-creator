@@ -1,12 +1,12 @@
 {
   "name": {
-    "default": "Afonso França de Oliveira"
+    "default": "Albert Einstein"
   },
   "title": {
-    "default": "Software Engineer"
+    "default": "Theoretical Physicist"
   },
   "contactInfo": {
-    "default": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof"
+    "default": "+1 555 5555 5555\neinstei@sample.com\neinstein.com • github.com/einstein\nlinkedin.com/in/einstein"
   },
   "sections": [
     {
@@ -18,7 +18,7 @@
       "layout": "text",
       "visible": true,
       "content": {
-        "default": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
+        "default": "My more important works include Special Theory of Relativity (1905), Relativity (English translations, 1920 and 1950), General Theory of Relativity (1916), Investigations on Theory of Brownian Movement (1926), and The Evolution of Physics (1938). Among my non-scientific works, About Zionism (1930), Why War? (1933), My Philosophy (1934), and Out of My Later Years (1950) are perhaps the most important."
       }
     },
     {
@@ -32,10 +32,26 @@
       "items": [
         {
           "key": {
-            "default": "Web Programmer"
+            "default": "Nobel Prize for Physics"
           },
           "value": {
-            "default": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mi massa. Suspendisse fermentum, lectus quis hendrerit placerat, metus nunc feugiat elit, nec porttitor enim mauris hendrerit nisl."
+          }
+        },
+        {
+          "key": {
+            "default": "Mathematics"
+          },
+          "value": {
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mi massa. Suspendisse fermentum, lectus quis hendrerit placerat, metus nunc feugiat elit, nec porttitor enim mauris hendrerit nisl."
+          }
+        },
+        {
+          "key": {
+            "default": "Philosopher"
+          },
+          "value": {
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget mi massa. Suspendisse fermentum, lectus quis hendrerit placerat, metus nunc feugiat elit, nec porttitor enim mauris hendrerit nisl."
           }
         }
       ]
@@ -49,7 +65,12 @@
       "layout": "list3Columns",
       "visible": true,
       "items": [
-        {"default": "Javascript"}
+        {"default": "theoretical physic"},
+        {"default": "mathemathics"},
+        {"default": "nobel prize for physics"},
+        {"default": "philosopher"},
+        {"default": "politician"},
+        {"default": "theory of relativity"}
       ]
     },
     {
@@ -63,21 +84,21 @@
       "items": [
         {
           "period": {
-            "default": "2006-current"
+            "default": "1932-1944"
           },
           "organization": {
-            "default": "Diebold Inc."
+            "default": "Princeton"
           },
           "location": {
-            "default": "São Paulo - Brazil"
+            "default": "New Jersey"
           },
           "occupations": [
             {
               "title": {
-                "default": "Software Engineer"
+                "default": "Professor of Theoretical Physics"
               },
               "tasks": [
-                {"default": "Intranet using ASP.NET MVC"}
+                {"default": "I emigrated to America to take the position of Professor of Theoretical Physics at Princeton (I was formally associated with the Institute for Advanced Study). "}
               ]
             }
           ]
@@ -95,13 +116,20 @@
       "items": [
         {
           "period": {
-            "default": "2008-2011"
+            "default": "1895-1904"
           },
           "title": {
-            "default": "MBA in Project Management (PMBOK based)"
+            "default": "Doctor’s degree"
           },
           "organization": {
-            "default": "FGV – Getúlio Vargas Foundation"
+            "default": "Swiss Federal Polytechnic School"
+          },
+          "location": {
+            "default": "Aarau - Switzerland"
+          }
+          ,
+          "content": {
+            "default": "I was trained as a teacher in physics and mathematics. "
           }
         }
       ]
@@ -117,13 +145,13 @@
       "items": [
         {
           "title": {
-            "default": "Collaborator in Open Source Community"
+            "default": "Collaborator in Physic Community"
           },
           "organization": {
-            "default": "github.com/afonsof"
+            "default": "Community"
           },
           "content": {
-            "default": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
+            "default": "In 1916 I published my paper on the general theory of relativity"
           }
         }
       ]
@@ -137,7 +165,12 @@
       "layout": "list2Columns",
       "visible": true,
       "items": [
-        {"default": "Certified Lean-Kanban"}
+        {"default": "Lorem ipsum dolor sit amet"},
+        {"default": "Lorem ipsum dolor sit amet"},
+        {"default": "Lorem ipsum dolor sit amet"},
+        {"default": "Lorem ipsum dolor sit amet"},
+        {"default": "Lorem ipsum dolor sit amet"},
+        {"default": "Lorem ipsum dolor sit amet"}
       ]
     }
   ]

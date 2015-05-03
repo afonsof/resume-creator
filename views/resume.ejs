@@ -16,11 +16,11 @@
 <div class="paper">
     <header>
         <hgroup>
-            <h1><%= name[language] || name['default'] %></h1>
+            <h1><%= render(name) %></h1>
 
-            <h2><%= title[language] || title['default'] %></h2>
+            <h2><%= render(title) %></h2>
         </hgroup>
-        <address style="white-space:pre"><%= contactInfo %></address>
+        <address style="white-space:pre"><%= render(contactInfo) %></address>
     </header>
 
     <main>
@@ -28,70 +28,57 @@
             var section = sections[sid];
         if(section.visible) { %>
 
-        <% if(section.layout == 'text') { %>
-        <section>
-            <h2><%= section.title %></h2>
+        <section class="<%= section.layout %>">
+            <h2><%= render(section.title) %></h2>
 
+            <% if(section.layout == 'text') { %>
             <div class="profile">
-                <p class="enlarge"><%= section.content %></p>
+                <p class="enlarge"><%= render(section.content) %></p>
             </div>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == 'titled3Columns') { %>
-        <section>
-            <h2><%= section.title %></h2>
-
+            <% if(section.layout == 'titled3Columns') { %>
             <div>
                 <% for(var i = 0; i < section.items.length; i++) { %>
                 <div class="skill">
-                    <h2><%= section.items[i].key %></h2>
+                    <h2><%= render(section.items[i].key) %></h2>
 
-                    <p><%= section.items[i].value %></p>
+                    <p><%= render(section.items[i].value) %></p>
                 </div>
                 <% } %>
             </div>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == 'list3Columns') { %>
-        <section>
-            <h2><%= section.title %></h2>
-
+            <% if(section.layout == 'list3Columns') { %>
             <div>
                 <% var lineCount = Math.ceil(section.items.length / 3) %>
                 <% for(i = 0; i < 3; i++ ){ %>
 
                 <ul class="technical">
                     <% for(var j = 0; j < lineCount; j++ ){ %>
-                    <li><%= section.items[i * lineCount + j] ? section.items[i * lineCount + j].content : "" %></li>
+                    <li><%= section.items[i * lineCount + j] ? render(section.items[i * lineCount + j]) : "" %></li>
                     <% } %>
                 </ul>
                 <% } %>
             </div>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == 'work') { %>
-        <section>
-
-            <h2><%= section.title %></h2>
-
+            <% if(section.layout == 'work') { %>
             <div>
                 <% for( i = 0; i < section.items.length; i++) {
                     var experience = section.items[i]; %>
                 <div class="experience">
-                    <h2><%= experience.organization %></h2>
-                    <h4><%= experience.period %></h4>
+                    <h2><%= render(experience.organization) %></h2>
+                    <h4><%= render(experience.period) %></h4>
                     <% for( var i1 = 0; i1 < experience.occupations.length; i1++) {
                         var occupation = experience.occupations[i1]; %>
                     <div class="occupation">
-                        <h3><%= occupation.title %></h3>
+                        <h3><%= render(occupation.title) %></h3>
 
                         <p>
                             <% for( j = 0; j < occupation.tasks.length; j++){ %>
                             <%= j !== 0 ? "•" : "" %>
-                            <%= occupation.tasks[j].content %>
+                            <%= render(occupation.tasks[j]) %>
                             <% } %>
                         </p>
                     </div>
@@ -99,69 +86,60 @@
                 </div>
                 <% } %>
             </div>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == "education") { %>
-        <section class="educations">
-            <h2><%= section.title %></h2>
+            <% if(section.layout == "education") { %>
             <% for(i = 0; i < section.items.length; i++ ) {
                 var education = section.items[i]; %>
             <div class="education">
-                <h2><%= education.title %></h2>
+                <h2><%= render(education.title) %></h2>
 
-                <h3><%= education.organization %>
-                <% if(education.location){%> - <%=education.location %><% } %>
+                <h3><%= render(education.organization) %>
+                    <% if(education.location){ %>
+                    - <%= render(education.location) %>
+                    <% } %>
                 </h3>
-                <h4><%= education.period %></h4>
+                <h4><%= render(education.period) %></h4>
                 <% if(education.content) { %>
-                <p style="margin-top: -8px; margin-bottom: 10px"><%= education.content %></p>
+                <p style="margin: 5px 0"><%= render(education.content) %></p>
                 <% } %>
 
             </div>
             <% } %>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == "volunteer") { %>
-        <section>
-            <h2><%= section.title %></h2>
+            <% if(section.layout == "volunteer") { %>
             <% for( i = 0; i < section.items.length; i++ ) {
                 var volunteer = section.items[i]; %>
             <div class="volunteer">
-                <h2><%= volunteer.title %></h2>
+                <h2><%= render(volunteer.title) %></h2>
 
-                <h3><%= volunteer.organization %></h3>
+                <h3><%= render(volunteer.organization) %></h3>
 
-                <p><%= volunteer.content %>
+                <p><%= render(volunteer.content) %>
                     <% if(volunteer.location || volunteer.period) { %>
-                    <br><%= volunteer.period %> <%= volunteer.location %>
+                    <br><%= render(volunteer.period) %> <%= render(volunteer.location) %>
                     <% } %>
                 </p>
 
             </div>
             <% } %>
-        </section>
-        <% } %>
+            <% } %>
 
-        <% if(section.layout == "list2Columns") { %>
-        <section>
-            <h2><%= section.title %></h2>
-
+            <% if(section.layout == "list2Columns") { %>
             <div>
                 <% lineCount = Math.ceil(section.items.length / 2) %>
                 <% for(i = 0; i < 2; i++ ){ %>
 
                 <ul class="certifications">
                     <% for(j = 0; j < lineCount; j++ ){ %>
-                    <li><%= section.items[i * lineCount + j] ? section.items[i * lineCount + j].content : "" %></li>
+                    <li><%= section.items[i * lineCount + j] ? render(section.items[i * lineCount + j]) : "" %></li>
                     <% } %>
                 </ul>
                 <% } %>
             </div>
+            <% } %>
         </section>
-        <% } %>
-
         <% } %>
         <% } %>
     </main>

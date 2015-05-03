@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         ejs: {
             test: {
-                src: 'templates/resume.ejs',
+                src: 'views/resume.ejs',
                 options: require('./site/resume.json'),
                 dest: 'prototype-dist/resume.html'
             }
@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'templates/', src: ['**'], dest: 'prototype-dist/'}
+                    {expand: true, cwd: 'views/', src: ['**'], dest: 'prototype-dist/'}
                 ]
             }
         },
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'prototype-dist/resume.css': 'templates/resume.scss'
+                    'prototype-dist/resume.css': 'views/resume.scss'
                 }
             },
             dist: {
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    'site/css/resume.css': 'templates/resume.scss'
+                    'site/css/resume.css': 'views/resume.scss'
                 }
             }
         }

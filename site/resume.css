@@ -160,7 +160,7 @@ section .education h4 {
 }
 section .profile p {
   font-size: 144%;
-  padding-right: 6.5em;
+  padding-right: 0;
   line-height: 24px;
 }
 section .volunteer p {

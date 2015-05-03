@@ -121,10 +121,22 @@
     <div class="container" ng-show="jsonData">
         <div style="margin-top: 60px; padding-bottom: 10px" class="box">
             <button class="btn btn-primary" ng-click="generate()">Generate</button>
-            <button class="btn btn-default" ng-click="generate('ptBR')">Generate pt-BR</button>
-            <button class="btn btn-default" ng-click="export()">Export</button>
-            <button class="btn btn-default" data-toggle="modal" data-target="#importModal">Import...</button>
-            <button class="btn btn-default" ng-click="clear()">Clear local data</button>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-expanded="false">
+                    More <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" ng-click="generate('ptBR')">Generate pt-BR</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" ng-click="export()">Export to JSON</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#importModal">Import...</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" ng-click="clear()">Start again</a></li>
+                </ul>
+            </div>
+
         </div>
         <ul class="nav nav-tabs" role="tablist" style="margin-bottom: 20px">
             <li role="presentation" ng-class="defaultTab==currentTab?'active':''">
@@ -189,6 +201,7 @@
 
                     <div class="form-group">
                         <label>Organization</label>
+
                         <div resume-field="item.organization"></div>
                     </div>
 
@@ -202,6 +215,7 @@
 
                         <div class="form-group col-md-6">
                             <label>Location</label>
+
                             <div resume-field="item.location"></div>
                         </div>
 
@@ -224,6 +238,7 @@
                             <li class="form-group" ng-repeat="(oid, occ) in item.occupations">
                                 <button ng-click="item.occupations.splice(oid, 1)">-</button>
                                 <label>Title</label>
+
                                 <div resume-field="occ.title"></div>
                                 <label>Tasks</label>
 

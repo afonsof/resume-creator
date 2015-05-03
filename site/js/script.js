@@ -34,21 +34,12 @@ app
                     clearTimeout(timeout);
                 }
                 timeout = setTimeout(function () {
-                    var diff = JsDiff.diffChars(angular.toJson(_oldData), angular.toJson(newData));
-                    _oldData = null;
-                    if (diff) {
-                        var filteredDiff = [];
-                        for (var i = 0; i < diff.length; i++) {
-                            var d = diff[i];
-                            if (d.kind == 'E') {
-                                filteredDiff.push(d.path.join('>'));
-                            }
-                        }
-                        ga('send', 'event', 'data', 'change', JSON.stringify(filteredDiff));
-                    }
+                    ga('send', 'event', 'data', 'save local');
+                    localStorage.setItem('data', JSON.stringify($scope.jsonData));
+                    showAlert('All data saved locally.');
+                    $scope.$apply();
                 }, 3000);
 
-                localStorage.setItem('data', JSON.stringify($scope.jsonData));
             }, true);
         }
 
@@ -139,7 +130,10 @@ app
         };
 
         $scope.clear = function () {
-            localStorage.setItem('data', '');
+            if (confirm('Are you sure? All your data will be lost')) {
+                localStorage.setItem('data', '');
+                document.location.reload();
+            }
         };
     })
     .directive('resumeField', function () {
@@ -150,7 +144,7 @@ app
                     element.addClass('translated');
                     element.find('.ptBR').focus();
                 });
-                if (scope.resumeField.ptBR) {
+                if (scope.resumeField && scope.resumeField.ptBR) {
                     element.addClass('translated');
                 }
             },
