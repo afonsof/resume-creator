@@ -1,115 +1,83 @@
 {
-  "name": "Afonso França de Oliveira",
-  "title": "Software Engineer",
-  "contactInfo": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof",
-
+  "name": {
+    "default": "Afonso França de Oliveira"
+  },
+  "title": {
+    "default": "Software Engineer"
+  },
+  "contactInfo": {
+    "default": "+55 24 99947-5822\nafonso.franca@gmail.com\nafonsof.com • github.com/afonsof\nlinkedin.com/in/afonsof"
+  },
   "sections": [
     {
-      "title": "Profile",
+      "title": {
+        "default": "Profile"
+      },
       "order": 1,
       "type": "text",
       "layout": "text",
       "visible": true,
-      "content": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
+      "content": {
+        "default": "sd fa sdf asd fas dfa sdf asd fa sdf asdf adsfasdfasdf ads fa sdfas df asdf asdfa"
+      }
     },
     {
-      "title": "Main Skills",
+      "title": {
+        "default": "Main Skills"
+      },
       "order": 2,
       "type": "keyValuePair",
       "layout": "titled3Columns",
       "visible": true,
       "items": [
         {
-          "key": "Web Programmer",
-          "value": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
-        },
-        {
-          "key": "Agile Enthusiast",
-          "value": "I've already worn the hat of Scrum Master and Product Owner, In these days we are also using some Kanban principles."
-        },
-        {
-          "key": "Software Engineer",
-          "value": "I know how is important to use TDD, Refactoring and Code Review to create profitable software."
+          "key": {
+            "default": "Web Programmer"
+          },
+          "value": {
+            "default": "10 years creating software, started using PHP passing through .NET and nowadays I enjoy NodeJS."
+          }
         }
       ]
     },
     {
-      "title": "Technical",
+      "title": {
+        "default": "Technical"
+      },
       "order": 3,
       "type": "array",
       "layout": "list3Columns",
       "visible": true,
       "items": [
-        {"content": "Javascript"},
-        {"content": "C#/ASP.NET MVC"},
-        {"content": "HTML5"},
-        {"content": "NodeJS"},
-        {"content": "CSS3"},
-
-        {"content": "Agile"},
-        {"content": "XP"},
-        {"content": "Kanban"},
-        {"content": "Scrum"},
-        {"content": "Python"},
-
-        {"content": "Code Coverage"},
-        {"content": "Design Patterns"},
-        {"content": "TDD"},
-        {"content": "CVS"},
-        {"content": "Continuous Integration"}
+        {"default": "Javascript"}
       ]
     },
     {
-      "title": "Work Experiences",
+      "title": {
+        "default": "Work Experiences"
+      },
       "order": 4,
       "visible": true,
       "type": "occupationList",
       "layout": "work",
       "items": [
         {
-          "period": "2006-current",
-          "organization": "Diebold Inc.",
-          "location": "São Paulo - Brazil",
+          "period": {
+            "default": "2006-current"
+          },
+          "organization": {
+            "default": "Diebold Inc."
+          },
+          "location": {
+            "default": "São Paulo - Brazil"
+          },
           "occupations": [
             {
-              "title": "Software Engineer",
+              "title": {
+                "default": "Software Engineer"
+              },
               "tasks": [
-                {"content": "Intranet using ASP.NET MVC"},
-                {"content": "Social Network Malware finder"},
-                {"content": "Heuristic site classifier"},
-                {"content": "Javascript unique Machine Identification"},
-                {"content": "Build scripts in Python"},
-                {"content": "Design Patterns and TDD"}
-              ]
-            },
-            {
-              "title": "Team Leader/Scrum Master",
-              "tasks": [
-                {"content": "Facilitated 6 developers"},
-                {"content": "Continuous integration, Nightly Builds and Code Review, CVS, Code coverage"},
-                {"content": "ASP.NET MVC Project"},
-                {"content": "Scrum, Kanban and XP based methodology"}
-              ]
-            },
-            {
-              "title": "Dev Manager",
-              "tasks": [
-                {"content": "Fraud prevention console"},
-                {"content": "Protecting 40 millions of clients"},
-                {"content": "Agile Leadership Practices"}
-              ]
-            }
-          ]
-        },
-        {
-          "period": "2005-2006",
-          "organization": "Flextronics International",
-          "location": "Rio de Janeiro - Brazil",
-          "occupations": [
-            {
-              "title": "IT Trainee",
-              "tasks": [
-                {"content": "Delivered internal softwares made using PHP"}
+                {"default": "Intranet using ASP.NET MVC"}
               ]
             }
           ]
@@ -117,70 +85,59 @@
       ]
     },
     {
-      "title": "Education",
+      "title": {
+        "default": "Education"
+      },
       "order": 5,
       "visible": true,
       "type": "occupationList",
       "layout": "education",
       "items": [
         {
-          "period": "2008-2011",
-          "title": "MBA in Project Management (PMBOK based)",
-          "organization": "FGV – Getúlio Vargas Foundation"
-        },
-        {
-          "period": "2002-2006",
-          "end": 2006,
-          "title": "Bachelor of Science Degree, Computer Science",
-          "organization": "UBM – University Center of Barra Mansa"
+          "period": {
+            "default": "2008-2011"
+          },
+          "title": {
+            "default": "MBA in Project Management (PMBOK based)"
+          },
+          "organization": {
+            "default": "FGV – Getúlio Vargas Foundation"
+          }
         }
       ]
     },
     {
-      "title": "Volunteer Experience",
+      "title": {
+        "default": "Volunteer Experience"
+      },
       "order": 6,
       "visible": true,
       "type": "occupationList",
       "layout": "volunteer",
       "items": [
         {
-          "title": "Collaborator in Open Source Community",
-          "organization": "github.com/afonsof",
-          "content": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
-        },
-        {
-          "title": "Co-creator and Presenter",
-          "organization": "Event Web Dev Summit 2015",
-          "content": "Organized together Google Developer Group in Rio an event for 200 people."
-        },
-        {
-          "title": "Community Leader",
-          "organization": "Jubasulf",
-          "content": "Coordinated 24 fellowship and entertainment events of a group of 2,000 youths."
+          "title": {
+            "default": "Collaborator in Open Source Community"
+          },
+          "organization": {
+            "default": "github.com/afonsof"
+          },
+          "content": {
+            "default": "Projects: BayesSharp • EvolveSharp • grunt-qunit-cov • pyhammer"
+          }
         }
       ]
     },
     {
-      "title": "Certifications and Trainings",
+      "title": {
+        "default": "Certifications and Trainings"
+      },
       "order": 7,
       "type": "array",
       "layout": "list2Columns",
       "visible": true,
       "items": [
-        {"content": "Certified Lean-Kanban"},
-        {"content": "CSPO – Certified Scrum Product Owner"},
-        {"content": "Management 3.0 - Agile Leadership Practices"},
-        {"content": "CSM – Certified Scrum Master"},
-        {"content": "MCP - Programming in HTML5 with Js and CSS3"},
-        {"content": "GDG Dev Fest Sudeste 2014"},
-        {"content": "Tableless Conference 2014"},
-        {"content": "BraziJS 2014"},
-        {"content": "Black Hat and DefCon 2014"},
-        {"content": "Agile Trends 2014"},
-        {"content": "Chrome Dev Summit 2013"},
-        {"content": "Agile Brazil 2013"},
-        {"content": "Visual Studio Summit 2013"},
-        {"content": "ACM – Intern. Collegiate Program. Contest 2006"}
+        {"default": "Certified Lean-Kanban"}
       ]
     }
   ]
