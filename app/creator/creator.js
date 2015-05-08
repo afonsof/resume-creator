@@ -41,7 +41,7 @@ angular
                 }
                 timeout = setTimeout(function () {
                     ga('send', 'event', 'data', 'save local');
-                    localStorage.setItem('data', JSON.stringify($scope.jsonData));
+                    localStorage.setItem('data', angular.toJson($scope.jsonData));
                     showAlert('All data saved locally.');
                     $scope.$apply();
                 }, 3000);
@@ -75,7 +75,7 @@ angular
                 a.style = "display: none";
                 a.download = "resume-data.json";
             }
-            var json = JSON.stringify($scope.jsonData),
+            var json = angular.toJson($scope.jsonData),
                 blob = new Blob([json], {type: "octet/stream"}),
                 url = window.URL.createObjectURL(blob);
             a.href = url;
@@ -131,7 +131,7 @@ angular
             }
             var data = angular.copy($scope.jsonData);
             data.language = language || 'default';
-            input.value = JSON.stringify(data);
+            input.value = angular.toJson(data);
             form.submit();
         };
 

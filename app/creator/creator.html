@@ -72,7 +72,7 @@
 
             <div data-ng-show="section.type=='keyValuePair' && section.visible">
                 <div data-ng-repeat="(key,item) in section.items" class="box">
-                    <h3>Item {{key+1}}  <button data-ng-click="sections.items.splice(key, 1)"><i class="fa fa-times"></i></button>
+                    <h3>Item {{key+1}}  <button data-ng-click="section.items.splice(key, 1)"><i class="fa fa-times"></i></button>
                     </h3>
 
                     <div class="form-group">
