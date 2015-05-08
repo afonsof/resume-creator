@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "postinstall": "bower install"
   },
   "dependencies": {

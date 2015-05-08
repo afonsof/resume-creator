@@ -4,4 +4,4 @@ dist/
 .sass-cache/
 .DS_Store
 prototype-dist/
-site/bower_components
+app/bower_components

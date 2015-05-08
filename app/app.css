@@ -1,0 +1,94 @@
+.box {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 10px 10px 0;
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+.alert-success {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    margin: 0 auto;
+    z-index: 200000;
+    width: 300px;
+    text-align: center;
+}
+
+.resume-field {
+    position: relative;
+    margin-bottom: 20px;
+    height: 20px;
+}
+
+.resume-field * {
+    float: left;
+}
+
+.resume-field button {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    height: 34px;
+}
+
+.resume-field textarea {
+    height: 100px !important;
+}
+
+.resume-field.translated input, .resume-field.translated textarea {
+    width: 50%;
+}
+
+.resume-field .ptBR {
+    display: none;
+}
+
+.translated .ptBR {
+    display: block;
+}
+
+.translated button {
+    display: none;
+}
+
+.resume-field button img {
+    width: 20px;
+}
+
+.arrayItem .resume-field {
+    float: left;
+    width: 95%;
+}
+
+.arrayItem > a {
+    float: left;
+    width: 5%;
+    text-align: center;
+}
+
+.arrayItem .fa{
+    color: #666;
+    vertical-align: middle;
+    height: 35px;
+    line-height: 35px;
+}
+
+li{
+    list-style: none;
+}

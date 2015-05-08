@@ -3,23 +3,6 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        ejs: {
-            test: {
-                src: 'views/resume.ejs',
-                options: require('./site/resume.json'),
-                dest: 'prototype-dist/resume.html'
-            }
-        },
-        copy: {
-            main: {
-                files: [
-                    {expand: true, cwd: 'views/', src: ['**'], dest: 'prototype-dist/'}
-                ]
-            }
-        },
-        clean: {
-            main: ["prototype-dist/*.ejs", "prototype-dist/*.scss"]
-        },
         sass: {
             prototype: {
                 options: {

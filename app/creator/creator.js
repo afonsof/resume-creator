@@ -1,10 +1,16 @@
 'use strict';
-var app = angular.module('resume-creator', []);
 
-app
-    .controller('MainCtrl', function ($scope, $http) {
+angular
+    .module('resumeCreator.creator', ['ngRoute'])
 
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/creator', {
+            templateUrl: 'creator/creator.html',
+            controller: 'CreatorCtrl'
+        });
+    }])
 
+    .controller('CreatorCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.jsonData = {};
 
         var savedData = localStorage.getItem('data');
@@ -15,11 +21,11 @@ app
             showAlert('Data loaded locally!');
         }
         else {
-            $http.get('resume.json')
+            $http.get('samples/professional.json')
                 .then(function (res) {
                     $scope.jsonData = res.data;
                     startWatch();
-                    localStorage.setItem('data', JSON.stringify(res.data));
+                    localStorage.setItem('data', angular.toJson(res.data));
                 });
         }
 
@@ -114,7 +120,7 @@ app
             ga('send', 'event', 'button', 'click', 'generate');
             if (!form) {
                 form = document.createElement("form");
-                form.action = '/';
+                form.action = '/resume';
                 form.method = 'POST';
                 form.target = "_blank";
                 input = document.createElement("textarea");
@@ -135,24 +141,4 @@ app
                 document.location.reload();
             }
         };
-    })
-    .directive('resumeField', function () {
-        return {
-            link: function (scope, element) {
-                element.addClass('resume-field');
-                element.on('click', 'button', function () {
-                    element.addClass('translated');
-                    element.find('.ptBR').focus();
-                });
-                if (scope.resumeField && scope.resumeField.ptBR) {
-                    element.addClass('translated');
-                }
-            },
-            restrict: 'A',
-            scope: {
-                resumeField: '='
-            },
-            template: '<input type="text" class="form-control" ng-model="resumeField.default" />' +
-            '<button>pt-BR</button><input placeholder="pt-BR" class="ptBR form-control" ng-model="resumeField.ptBR">'
-        };
-    });
+    }]);
